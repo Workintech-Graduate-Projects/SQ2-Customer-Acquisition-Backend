@@ -1,4 +1,4 @@
-﻿using CRM_Data.Entities;
+﻿using CRM_DataAccess.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -6,15 +6,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CRM_Data.Context
+namespace CRM_DataAccess.Context
 {
-    public class ApplicationDbContext:DbContext
+    public class ApplicationDbContext : DbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
         }
 
-        protected ApplicationDbContext()
+        public ApplicationDbContext()
         {
         }
 

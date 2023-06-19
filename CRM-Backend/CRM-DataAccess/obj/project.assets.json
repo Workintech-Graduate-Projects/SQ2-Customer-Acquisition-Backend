@@ -2914,6 +2914,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Microsoft.EntityFrameworkCore >= 8.0.0-preview.5.23280.1",
+      "Microsoft.EntityFrameworkCore.Design >= 8.0.0-preview.5.23280.1",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.0-preview.5.23280.1",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.0-preview.5.23280.1"
     ]
@@ -2925,9 +2926,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rumey\\source\\repos\\Workintech-Graduate-Projects\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-DataAccess\\CRM-Data.csproj",
-      "projectName": "CRM-Data",
-      "projectPath": "C:\\Users\\rumey\\source\\repos\\Workintech-Graduate-Projects\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-DataAccess\\CRM-Data.csproj",
+      "projectUniqueName": "C:\\Users\\rumey\\source\\repos\\Workintech-Graduate-Projects\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-DataAccess\\CRM-DataAccess.csproj",
+      "projectName": "CRM-DataAccess",
+      "projectPath": "C:\\Users\\rumey\\source\\repos\\Workintech-Graduate-Projects\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-DataAccess\\CRM-DataAccess.csproj",
       "packagesPath": "C:\\Users\\rumey\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\rumey\\source\\repos\\Workintech-Graduate-Projects\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-DataAccess\\obj\\",
       "projectStyle": "PackageReference",
@@ -2964,6 +2965,12 @@
         "targetAlias": "net6.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[8.0.0-preview.5.23280.1, )"
+          },
+          "Microsoft.EntityFrameworkCore.Design": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
             "target": "Package",
             "version": "[8.0.0-preview.5.23280.1, )"
           },
