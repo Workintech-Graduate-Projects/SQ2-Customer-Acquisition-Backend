@@ -19,13 +19,12 @@ namespace CRM_DataAccess.Context
         {
         }
 
-        public DbSet<Position> Positions { get; set; } //veritabanındaki pozisyon tablosuna erişebilmek için oluşturulan değişken.
-                                                       //Bu tablo üzerinde değişiklik yapmak için bu değişken kullanılacak
-        public DbSet<Sector> Sectors { get; set; }
         public DbSet<Role> Roles { get; set; }
-        public DbSet<User> Users {get; set;}
+        public DbSet<User> Users { get; set; }
         public DbSet<Customer> Customers { get; set; }
-
+        public DbSet<Position> Positions { get; set; } 
+        public DbSet<Sector> Sectors { get; set; }//veritabanındaki sektör tablosuna erişebilmek için oluşturulan değişken.
+                                                  //Bu tablo üzerinde değişiklik yapmak için bu değişken kullanılacak
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -38,6 +37,67 @@ namespace CRM_DataAccess.Context
         {
             modelBuilder.HasDefaultSchema("dbo");
 
+            modelBuilder.Entity<Role>(entity =>
+            {
+                entity.ToTable("Role");
+
+                entity.Property(i => i.Id)
+                    .HasColumnName("Id")
+                    .HasColumnType("int")
+                    .UseIdentityColumn()
+                    .IsRequired();
+                entity.Property(i => i.Name)
+                    .HasColumnName("Name")
+                    .HasColumnType("varchar")
+                    .HasMaxLength(100);
+            });
+
+            modelBuilder.Entity<User>(entity =>
+            {
+                entity.ToTable("User");
+
+                entity.Property(i => i.Id)
+                    .HasColumnName("Id")
+                    .HasColumnType("int")
+                    .UseIdentityColumn()
+                    .IsRequired();
+                entity.Property(i => i.FirstName)
+                    .HasColumnName("FirstName")
+                    .HasColumnType("varchar")
+                    .HasMaxLength(100)
+                    .IsRequired();
+                entity.Property(i=>i.LastName)
+                    .HasColumnName("LastName")
+                    .HasColumnType("varchar")
+                    .HasMaxLength(100)
+                    .IsRequired();
+                entity.Property(i => i.Email)
+                    .HasColumnName("Email")
+                    .HasColumnType("varchar")
+                    .HasMaxLength(100)
+                    .IsRequired();
+                entity.Property(i => i.Phone)
+                    .HasColumnName("Phone")
+                    .HasColumnType("varchar")
+                    .HasMaxLength(100)
+                    .IsRequired();
+            });
+
+            modelBuilder.Entity<Customer>(entity =>
+            {
+                entity.ToTable("Customer");
+
+                
+                 entity.Property(i => i.Age)
+                    .HasColumnName("Age")
+                    .HasColumnType("int")
+                    .IsRequired();
+                entity.Property(i => i.University)
+                    .HasColumnName("University")
+                    .HasColumnType("varchar")
+                    .HasMaxLength(100);
+
+            });
 
             modelBuilder.Entity<Position>(entity =>
             {
