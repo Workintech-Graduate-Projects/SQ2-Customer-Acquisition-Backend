@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CRM_DataAccess.Entities
 {
-    public class Sektor
+    public class Sector
     {
         public int Id { get; set; }
         public string Name { get; set; }
