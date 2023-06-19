@@ -23,7 +23,7 @@ namespace CRM_DataAccess.Context
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source=DESKTOP-TGHGBD6;Initial Catalog=CRM-DB;Integrated Security=True");
+                optionsBuilder.UseSqlServer("Data Source=DESKTOP-TGHGBD6;Initial Catalog=CRM-DB;Integrated Security=True;TrustServerCertificate=True");
             }
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder) //mapping işlemleri yapar
@@ -43,7 +43,7 @@ namespace CRM_DataAccess.Context
                 entity.Property(i => i.Name)
                     .HasColumnName("Name")
                     .HasColumnType("varchar")
-                    .HasMaxLength(50);
+                    .HasMaxLength(100);
                 entity.Property(i => i.Score)
                     .HasColumnName("Score")
                     .HasColumnType("int")
@@ -62,11 +62,11 @@ namespace CRM_DataAccess.Context
                 entity.Property(i => i.Name)
                     .HasColumnName("Name")
                     .HasColumnType("varchar")
-                    .HasMaxLength(50);
+                    .HasMaxLength(100);
                 entity.Property(i => i.Group)
                     .HasColumnName("Group")
                     .HasColumnType("varchar")
-                    .HasMaxLength(50);
+                    .HasMaxLength(100);
                 entity.Property(i => i.Score)
                     .HasColumnName("Score")
                     .HasColumnType("int")
