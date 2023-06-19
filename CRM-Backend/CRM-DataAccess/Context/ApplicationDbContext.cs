@@ -1,5 +1,6 @@
 ﻿using CRM_DataAccess.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Identity.Client;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,13 @@ namespace CRM_DataAccess.Context
         {
         }
 
+        public DbSet<Position> Positions { get; set; } //veritabanındaki pozisyon tablosuna erişebilmek için oluşturulan değişken.
+                                                       //Bu tablo üzerinde değişiklik yapmak için bu değişken kullanılacak
+        public DbSet<Sector> Sectors { get; set; }
+        public DbSet<Role> Roles { get; set; }
+        public DbSet<User> Users {get; set;}
+        public DbSet<Customer> Customers { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -31,9 +39,9 @@ namespace CRM_DataAccess.Context
             modelBuilder.HasDefaultSchema("dbo");
 
 
-            modelBuilder.Entity<Pozisyon>(entity =>
+            modelBuilder.Entity<Position>(entity =>
             {
-                entity.ToTable("Pozisyon");
+                entity.ToTable("Posiiton");
 
                 entity.Property(i => i.Id)
                     .HasColumnName("Id")
@@ -50,9 +58,9 @@ namespace CRM_DataAccess.Context
                     .IsRequired();
             });
 
-            modelBuilder.Entity<Sektor>(entity =>
+            modelBuilder.Entity<Sector>(entity =>
             {
-                entity.ToTable("Sektor");
+                entity.ToTable("Sector");
 
                 entity.Property(i => i.Id)
                     .HasColumnName("Id")
