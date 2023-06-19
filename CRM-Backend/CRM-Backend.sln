@@ -5,7 +5,7 @@ VisualStudioVersion = 17.6.33712.159
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRM-API", "CRM-API\CRM-API.csproj", "{C346D2E7-8291-4A47-9D48-E31035688DF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRM-DataAccess", "CRM-DataAccess\CRM-DataAccess.csproj", "{1F060C25-E820-46E2-BA6B-71A7722F3D95}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRM-Data", "CRM-DataAccess\CRM-Data.csproj", "{1F060C25-E820-46E2-BA6B-71A7722F3D95}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
