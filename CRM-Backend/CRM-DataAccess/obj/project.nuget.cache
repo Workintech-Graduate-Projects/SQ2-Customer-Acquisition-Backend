@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SC+5rDtGmAWB6//RjD/U60eYCz/remtTVgBDf5Lx7nG7OIxyonQh6mlhhTxIRz+coIvmxWlJvs1x0XZnBEsQTg==",
+  "dgSpecHash": "Pi+xQeRa21HItrLpEhnUGm4XdZBYMlBIXPG0dv1l5vyoyrww2RaAnZqyxQRDLmiOWT12bOR3TWKS36yyI+5SlA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rumey\\source\\repos\\Workintech-Graduate-Projects\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-DataAccess\\CRM-DataAccess.csproj",
+  "projectFilePath": "C:\\Users\\rumey\\source\\repos\\Workintech-Graduate-Projects\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-DataAccess\\CRM-Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rumey\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\rumey\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
@@ -17,6 +17,7 @@
     "C:\\Users\\rumey\\.nuget\\packages\\microsoft.entityframeworkcore.design\\8.0.0-preview.5.23280.1\\microsoft.entityframeworkcore.design.8.0.0-preview.5.23280.1.nupkg.sha512",
     "C:\\Users\\rumey\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\8.0.0-preview.5.23280.1\\microsoft.entityframeworkcore.relational.8.0.0-preview.5.23280.1.nupkg.sha512",
     "C:\\Users\\rumey\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\8.0.0-preview.5.23280.1\\microsoft.entityframeworkcore.sqlserver.8.0.0-preview.5.23280.1.nupkg.sha512",
+    "C:\\Users\\rumey\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\8.0.0-preview.5.23280.1\\microsoft.entityframeworkcore.tools.8.0.0-preview.5.23280.1.nupkg.sha512",
     "C:\\Users\\rumey\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\8.0.0-preview.5.23280.8\\microsoft.extensions.caching.abstractions.8.0.0-preview.5.23280.8.nupkg.sha512",
     "C:\\Users\\rumey\\.nuget\\packages\\microsoft.extensions.caching.memory\\8.0.0-preview.5.23280.8\\microsoft.extensions.caching.memory.8.0.0-preview.5.23280.8.nupkg.sha512",
     "C:\\Users\\rumey\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0-preview.5.23280.8\\microsoft.extensions.configuration.abstractions.8.0.0-preview.5.23280.8.nupkg.sha512",
