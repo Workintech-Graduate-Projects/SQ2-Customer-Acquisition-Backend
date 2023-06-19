@@ -1,4 +1,4 @@
-﻿using CRM_Data.Entities;
+﻿using CRM_DataAccess.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -6,15 +6,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CRM_Data.Context
+namespace CRM_DataAccess.Context
 {
-    public class ApplicationDbContext:DbContext
+    public class ApplicationDbContext : DbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
         }
 
-        protected ApplicationDbContext()
+        public ApplicationDbContext()
         {
         }
 
@@ -23,7 +23,7 @@ namespace CRM_Data.Context
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source=DESKTOP-TGHGBD6;Initial Catalog=CRM-DB;Integrated Security=True");
+                optionsBuilder.UseSqlServer("Data Source=DESKTOP-TGHGBD6;Initial Catalog=CRM-DB;Integrated Security=True;TrustServerCertificate=True");
             }
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder) //mapping işlemleri yapar
@@ -43,7 +43,7 @@ namespace CRM_Data.Context
                 entity.Property(i => i.Name)
                     .HasColumnName("Name")
                     .HasColumnType("varchar")
-                    .HasMaxLength(50);
+                    .HasMaxLength(100);
                 entity.Property(i => i.Score)
                     .HasColumnName("Score")
                     .HasColumnType("int")
@@ -62,11 +62,11 @@ namespace CRM_Data.Context
                 entity.Property(i => i.Name)
                     .HasColumnName("Name")
                     .HasColumnType("varchar")
-                    .HasMaxLength(50);
+                    .HasMaxLength(100);
                 entity.Property(i => i.Group)
                     .HasColumnName("Group")
                     .HasColumnType("varchar")
-                    .HasMaxLength(50);
+                    .HasMaxLength(100);
                 entity.Property(i => i.Score)
                     .HasColumnName("Score")
                     .HasColumnType("int")

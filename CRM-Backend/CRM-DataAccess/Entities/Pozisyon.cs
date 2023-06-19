@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CRM_Data.Entities
+namespace CRM_DataAccess.Entities
 {
     public class Pozisyon
     {
