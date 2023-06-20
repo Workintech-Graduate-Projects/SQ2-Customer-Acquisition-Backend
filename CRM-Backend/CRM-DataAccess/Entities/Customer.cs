@@ -15,7 +15,7 @@ namespace CRM_DataAccess.Entities
         public string SectorName { get; set; }
         public int PositionId { get; set; }  ///
         public string PositionName { get; set; }
-        public int ExperienceYear { get; set; }
+        public int ExperienceYear { get; set; } ///
         public string Email { get; set; }
         public string Phone { get; set; }
         public int Age { get; set; }

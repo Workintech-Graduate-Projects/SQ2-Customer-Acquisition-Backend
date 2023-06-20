@@ -32,6 +32,7 @@ namespace CRM_DataAccess.Context
             {
                 optionsBuilder.UseSqlServer("Data Source=DESKTOP-TGHGBD6;Initial Catalog=CRM-DB;Integrated Security=True;TrustServerCertificate=True");
             }
+            
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder) //mapping işlemleri yapar
         {
@@ -51,6 +52,7 @@ namespace CRM_DataAccess.Context
                     .HasColumnType("varchar")
                     .HasMaxLength(100);
             });
+           
 
             modelBuilder.Entity<User>(entity =>
             {
