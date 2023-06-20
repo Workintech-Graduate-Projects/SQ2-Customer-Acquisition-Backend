@@ -71,16 +71,6 @@ namespace CRM_DataAccess.Context
                     .HasColumnType("varchar")
                     .HasMaxLength(100)
                     .IsRequired();
-                entity.Property(i => i.Email)
-                    .HasColumnName("Email")
-                    .HasColumnType("varchar")
-                    .HasMaxLength(100)
-                    .IsRequired();
-                entity.Property(i => i.Phone)
-                    .HasColumnName("Phone")
-                    .HasColumnType("varchar")
-                    .HasMaxLength(100)
-                    .IsRequired();
             });
 
             modelBuilder.Entity<Customer>(entity =>
