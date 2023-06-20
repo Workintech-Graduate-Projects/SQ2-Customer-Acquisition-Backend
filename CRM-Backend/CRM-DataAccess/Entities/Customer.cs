@@ -11,6 +11,10 @@ namespace CRM_DataAccess.Entities
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public int SectorId { get; set; }  ///
+        public string SectorName { get; set; }
+        public int PositionId { get; set; }  ///
+        public string PositionName { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
         public int Age { get; set; }
