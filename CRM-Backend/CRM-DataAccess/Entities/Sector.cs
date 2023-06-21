@@ -9,8 +9,9 @@ namespace CRM_DataAccess.Entities
     public class Sector
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Group { get; set; }
-        public int Score { get; set; }
+        public string? Name { get; set; }
+        public string? Group { get; set; }
+        public int? Score { get; set; }
+        public ICollection<Customer>? Customers { get; set; }
     }
 }
