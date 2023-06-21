@@ -1,0 +1,14 @@
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM-DataAccess\bin\Debug\net6.0\CRM-Data.deps.json
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM-DataAccess\bin\Debug\net6.0\CRM-Data.runtimeconfig.json
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM-DataAccess\bin\Debug\net6.0\CRM-Data.dll
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM-DataAccess\bin\Debug\net6.0\CRM-Data.pdb
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM-DataAccess\obj\Debug\net6.0\CRM-Data.csproj.AssemblyReference.cache
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM-DataAccess\obj\Debug\net6.0\CRM-Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM-DataAccess\obj\Debug\net6.0\CRM-Data.AssemblyInfoInputs.cache
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM-DataAccess\obj\Debug\net6.0\CRM-Data.AssemblyInfo.cs
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM-DataAccess\obj\Debug\net6.0\CRM-Data.csproj.CoreCompileInputs.cache
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM-DataAccess\obj\Debug\net6.0\CRM-Data.dll
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM-DataAccess\obj\Debug\net6.0\refint\CRM-Data.dll
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM-DataAccess\obj\Debug\net6.0\CRM-Data.pdb
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM-DataAccess\obj\Debug\net6.0\CRM-Data.genruntimeconfig.cache
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM-DataAccess\obj\Debug\net6.0\ref\CRM-Data.dll
