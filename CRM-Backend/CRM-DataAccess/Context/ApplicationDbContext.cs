@@ -32,6 +32,7 @@ namespace CRM_DataAccess.Context
             {
                 optionsBuilder.UseSqlServer("Data Source=DESKTOP-TGHGBD6;Initial Catalog=CRM-DB;Integrated Security=True;TrustServerCertificate=True");
             }
+            
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder) //mapping işlemleri yapar
         {
@@ -51,6 +52,7 @@ namespace CRM_DataAccess.Context
                     .HasColumnType("varchar")
                     .HasMaxLength(100);
             });
+           
 
             modelBuilder.Entity<User>(entity =>
             {
@@ -61,37 +63,66 @@ namespace CRM_DataAccess.Context
                     .HasColumnType("int")
                     .UseIdentityColumn()
                     .IsRequired();
+                entity.Property(i => i.Username)
+                    .HasColumnName("Username")
+                    .HasColumnType("varchar")
+                    .HasMaxLength(100);
+                entity.Property(i => i.Password)
+                    .HasColumnName("Password")
+                    .HasColumnType("varchar")
+                    .HasMaxLength(50);
                 entity.Property(i => i.FirstName)
                     .HasColumnName("FirstName")
                     .HasColumnType("varchar")
-                    .HasMaxLength(100)
-                    .IsRequired();
-                entity.Property(i=>i.LastName)
+                    .HasMaxLength(100);
+                entity.Property(i => i.LastName)
                     .HasColumnName("LastName")
                     .HasColumnType("varchar")
-                    .HasMaxLength(100)
-                    .IsRequired();
+                    .HasMaxLength(100);
             });
 
             modelBuilder.Entity<Customer>(entity =>
             {
                 entity.ToTable("Customer");
 
-                
-                 entity.Property(i => i.Age)
-                    .HasColumnName("Age")
+                entity.Property(i => i.Id)
+                    .HasColumnName("Id")
                     .HasColumnType("int")
+                    .UseIdentityColumn()
                     .IsRequired();
+                entity.Property(i => i.FirstName)
+                    .HasColumnName("FirstName")
+                    .HasColumnType("varchar")
+                    .HasMaxLength(100);
+                entity.Property(i => i.LastName)
+                    .HasColumnName("LastName")
+                    .HasColumnType("varchar")
+                    .HasMaxLength(100);
+                entity.Property(i => i.ExperienceYear)
+                    .HasColumnName("ExperienceYear")
+                    .HasColumnType("int");
+                entity.Property(i => i.Email)
+                    .HasColumnName("Email")
+                    .HasColumnType("varchar")
+                    .HasMaxLength(100);
+                entity.Property(i => i.Phone)
+                    .HasColumnName("Phone")
+                    .HasColumnType("varchar")
+                    .HasMaxLength(100);
+                entity.Property(i => i.Age)
+                    .HasColumnName("Age")
+                    .HasColumnType("int");
                 entity.Property(i => i.University)
                     .HasColumnName("University")
                     .HasColumnType("varchar")
                     .HasMaxLength(100);
-
+                entity.Property(i => i.SectorId).HasColumnName("SectorId");
+                entity.Property(i => i.PositionId).HasColumnName("PositionId");
             });
 
             modelBuilder.Entity<Position>(entity =>
             {
-                entity.ToTable("Posiiton");
+                entity.ToTable("Position");
 
                 entity.Property(i => i.Id)
                     .HasColumnName("Id")
@@ -104,8 +135,9 @@ namespace CRM_DataAccess.Context
                     .HasMaxLength(100);
                 entity.Property(i => i.Score)
                     .HasColumnName("Score")
-                    .HasColumnType("int")
-                    .IsRequired();
+                    .HasColumnType("int");
+
+                entity.HasMany(i => i.Customers).WithOne(i => i.Position).HasForeignKey(i => i.PositionId).HasConstraintName("position_customer_id_fk");
             });
 
             modelBuilder.Entity<Sector>(entity =>
@@ -127,8 +159,9 @@ namespace CRM_DataAccess.Context
                     .HasMaxLength(100);
                 entity.Property(i => i.Score)
                     .HasColumnName("Score")
-                    .HasColumnType("int")
-                    .IsRequired();
+                    .HasColumnType("int");
+
+                entity.HasMany(i => i.Customers).WithOne(i => i.Sector).HasForeignKey(i => i.SectorId).HasConstraintName("sector_customer_id_fk");
             });
 
 
