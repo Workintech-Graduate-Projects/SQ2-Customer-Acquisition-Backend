@@ -1051,10 +1051,21 @@
           }
         }
       },
+      "CRM-Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/CRM-Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM-Common.dll": {}
+        }
+      },
       "CRM-DataAccess/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "CRM-Common": "1.0.0",
           "Microsoft.EntityFrameworkCore": "8.0.0-preview.5.23280.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0-preview.5.23280.1"
         },
@@ -3070,6 +3081,11 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "CRM-Common/1.0.0": {
+      "type": "project",
+      "path": "../CRM-Common/CRM-Common.csproj",
+      "msbuildProject": "../CRM-Common/CRM-Common.csproj"
     },
     "CRM-DataAccess/1.0.0": {
       "type": "project",

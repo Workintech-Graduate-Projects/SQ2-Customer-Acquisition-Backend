@@ -1060,6 +1060,16 @@
             "rid": "win"
           }
         }
+      },
+      "CRM-Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/CRM-Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM-Common.dll": {}
+        }
       }
     }
   },
@@ -2909,10 +2919,16 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "CRM-Common/1.0.0": {
+      "type": "project",
+      "path": "../CRM-Common/CRM-Common.csproj",
+      "msbuildProject": "../CRM-Common/CRM-Common.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "CRM-Common >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 8.0.0-preview.5.23280.1",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.0-preview.5.23280.1",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.0-preview.5.23280.1",
@@ -2951,7 +2967,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\rumey\\source\\repos\\Workintech-Graduate-Projects\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-Common\\CRM-Common.csproj": {
+              "projectPath": "C:\\Users\\rumey\\source\\repos\\Workintech-Graduate-Projects\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-Common\\CRM-Common.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
