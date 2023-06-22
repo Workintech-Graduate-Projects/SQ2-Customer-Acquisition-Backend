@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using CRM_DataAccess.Context;
 using CRM_DataAccess.Entities;
@@ -41,7 +42,21 @@ namespace CRM_API.Controllers
 
             return Ok();
         }
-        //[HttpPut]
-        //public async Task<IActionResult> Put() { };
+        [HttpPut]
+        public async Task<IActionResult> Update()
+        {
+            var sector = await applicationDbContext.Sectors.FirstOrDefaultAsync();
+            
+            if(sector != null)
+            {
+                sector.Name = "Tarım";
+                sector.Group = "B";
+                sector.Score = 70;
+            }
+
+            await applicationDbContext.SaveChangesAsync();
+            return Ok();
+        }
+
     }
 }
