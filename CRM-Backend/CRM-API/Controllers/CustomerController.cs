@@ -20,7 +20,7 @@ namespace CRM_API.Controllers
         {
             var customer = await applicationDbContext.Customers.ToListAsync();
 
-            return Ok(customer)
+            return Ok(customer);
         }
     }
 }
