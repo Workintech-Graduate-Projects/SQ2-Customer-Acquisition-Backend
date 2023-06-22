@@ -21,7 +21,7 @@ namespace CRM_API.Controllers
         {
             this.applicationDbContext = applicationDbContext;
         }
-      
+
         [HttpPost]
         public async Task<IActionResult> Add()
         {
@@ -34,7 +34,6 @@ namespace CRM_API.Controllers
 
             await applicationDbContext.Sectors.AddAsync(sector);
             await applicationDbContext.SaveChangesAsync();
-
             return Ok();
         }
 
@@ -54,10 +53,15 @@ namespace CRM_API.Controllers
                 sector.Name = "Tarım";
                 sector.Group = "B";
                 sector.Score = 70;
+
+
+
+                applicationDbContext.Sectors.Update(sector);
             }
             await applicationDbContext.SaveChangesAsync();
             return Ok();
         }
+
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
@@ -67,7 +71,6 @@ namespace CRM_API.Controllers
                 applicationDbContext.Sectors.Remove(sector);
             }
             await applicationDbContext.SaveChangesAsync();
-
             return Ok();
         }
 
