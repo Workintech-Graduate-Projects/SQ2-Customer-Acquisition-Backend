@@ -15,23 +15,60 @@ namespace CRM_API.Controllers
     [ApiController]
     public class PositionController : ControllerBase
     {
-        private readonly ApplicationDbContext applicatonDbContext;
+        private readonly ApplicationDbContext applicationDbContext;
 
         public PositionController(ApplicationDbContext applicationDbContext)
         {
-            this.applicatonDbContext = applicatonDbContext;
+            this.applicationDbContext = applicationDbContext;
         }
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var positions = applicatonDbContext.Positions.ToListAsync();
+            var positions = applicationDbContext.Positions.ToListAsync();
             return Ok(positions);
         }
         [HttpPost]
-        public async Task<IActionResult> Post()
+        public async Task<IActionResult> Add()
         {
             Position position = new Position();
+            if (position != null) {
+
+                position.Id = 1;
+                position.Name = "Senior";
+                position.Score = 70;
+          
+            }
+        await applicationDbContext.Positions.AddAsync(position);
+        await applicationDbContext.SaveChangesAsync();
+        return Ok();
+        }
+
+        [HttpDelete("{id}")]
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            var position = await applicationDbContext.Positions.FirstOrDefaultAsync(i => i.Id == id);
+            applicationDbContext.Remove(position);
+
+            await applicationDbContext.SaveChangesAsync();
+            return Ok();  
+
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> Update()
+        {
+            var position = await applicationDbContext.Positions.FirstOrDefaultAsync();
+            if (position != null)
+            {
+                position.Name = "Junior";
+                position.Score = 50;
+
+                applicationDbContext.Positions.Update(position);
+            }
+            await applicationDbContext.SaveChangesAsync();
             return Ok();
+
         }
     }
 }
