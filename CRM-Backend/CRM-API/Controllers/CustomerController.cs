@@ -33,7 +33,6 @@ namespace CRM_API.Controllers
         public async Task<IActionResult> Add()
         {
 
-
             Customer cs = new Customer()
             {
                 FirstName = "rumeysa",

@@ -8,23 +8,23 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Sertaç\\.nuget\\packages\\": {},
+    "C:\\Users\\rumey\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Sertaç\\Documents\\Projeler\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-Common\\CRM-Common.csproj",
+      "projectUniqueName": "C:\\Users\\rumey\\source\\repos\\Workintech-Graduate-Projects\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-Common\\CRM-Common.csproj",
       "projectName": "CRM-Common",
-      "projectPath": "C:\\Users\\Sertaç\\Documents\\Projeler\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-Common\\CRM-Common.csproj",
-      "packagesPath": "C:\\Users\\Sertaç\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Sertaç\\Documents\\Projeler\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-Common\\obj\\",
+      "projectPath": "C:\\Users\\rumey\\source\\repos\\Workintech-Graduate-Projects\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-Common\\CRM-Common.csproj",
+      "packagesPath": "C:\\Users\\rumey\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\rumey\\source\\repos\\Workintech-Graduate-Projects\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-Common\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Sertaç\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\rumey\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -33,7 +33,8 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://microsofthealthoss.pkgs.visualstudio.com/FhirServer/_packaging/Public/nuget/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
@@ -66,7 +67,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
       }
     }
   }
