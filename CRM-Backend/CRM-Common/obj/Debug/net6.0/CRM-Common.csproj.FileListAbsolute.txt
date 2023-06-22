@@ -1,0 +1,12 @@
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM-Common\bin\Debug\net6.0\CRM-Common.deps.json
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM-Common\bin\Debug\net6.0\CRM-Common.dll
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM-Common\bin\Debug\net6.0\CRM-Common.pdb
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM-Common\obj\Debug\net6.0\CRM-Common.csproj.AssemblyReference.cache
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM-Common\obj\Debug\net6.0\CRM-Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM-Common\obj\Debug\net6.0\CRM-Common.AssemblyInfoInputs.cache
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM-Common\obj\Debug\net6.0\CRM-Common.AssemblyInfo.cs
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM-Common\obj\Debug\net6.0\CRM-Common.csproj.CoreCompileInputs.cache
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM-Common\obj\Debug\net6.0\CRM-Common.dll
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM-Common\obj\Debug\net6.0\refint\CRM-Common.dll
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM-Common\obj\Debug\net6.0\CRM-Common.pdb
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM-Common\obj\Debug\net6.0\ref\CRM-Common.dll

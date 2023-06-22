@@ -1,5 +1,8 @@
-﻿using CRM_DataAccess.Context;
+﻿using CRM_Common;
+using CRM_DataAccess.Context;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,8 +15,11 @@ namespace CRM_DataAccess.Context
     {
         public ApplicationDbContext CreateDbContext(string[] args)
         {
-            var context = new ApplicationDbContext();
-            return context;
+            var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
+
+            optionsBuilder.UseSqlServer(StringContants.DbConnectionString);
+
+            return new ApplicationDbContext(optionsBuilder.Options);
         }
     }
 }

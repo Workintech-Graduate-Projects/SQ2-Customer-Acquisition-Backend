@@ -1,4 +1,5 @@
-﻿using CRM_DataAccess.Entities;
+﻿using CRM_Common;
+using CRM_DataAccess.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Client;
 using System;
@@ -30,8 +31,11 @@ namespace CRM_DataAccess.Context
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source=DESKTOP-TGHGBD6;Initial Catalog=CRM-DB;Integrated Security=True;TrustServerCertificate=True");
+                optionsBuilder.UseSqlServer(StringContants.DbConnectionString);
+                optionsBuilder.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
             }
+
+            base.OnConfiguring(optionsBuilder);
             
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder) //mapping işlemleri yapar

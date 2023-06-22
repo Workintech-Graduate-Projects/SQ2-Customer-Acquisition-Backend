@@ -20,4 +20,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CRM-Common\CRM-Common.csproj" />
+  </ItemGroup>
+
 </Project>
