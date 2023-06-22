@@ -2,5 +2,31 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
+<<<<<<< HEAD
+/CRM-Backend/.vs/CRM-Backend/FileContentIndex/02f47797-031b-42e1-b226-41d4d697fd33.vsidx
+/CRM-Backend/.vs/CRM-Backend/FileContentIndex/21c3a011-79ed-4cff-a409-4707e107ac2b.vsidx
+/CRM-Backend/.vs/CRM-Backend/FileContentIndex/35bf4395-af76-4dd3-865a-5c3ee2dae1fd.vsidx
+/CRM-Backend/.vs/CRM-Backend/FileContentIndex/3735daa2-3712-4aaf-9f82-b5e58e7d6faf.vsidx
+/CRM-Backend/.vs/CRM-Backend/FileContentIndex/0956947b-b1d9-4a11-98f8-fd1408e71f5d.vsidx
+/CRM-Backend/.vs/CRM-Backend/FileContentIndex/09fe5e34-1569-47dc-bcb5-e858008c325f.vsidx
+/CRM-Backend/.vs/CRM-Backend/FileContentIndex/fb2ea88e-1211-43f6-81f6-240e9f93a3b7.vsidx
+/CRM-Backend/CRM-API/obj/Debug/net6.0/CRM-API.csproj.AssemblyReference.cache
+/CRM-Backend/.vs/CRM-Backend/DesignTimeBuild/.dtbcache.v2
+/CRM-Backend/.vs/CRM-Backend/v17/.suo
+/CRM-Backend/CRM-WebApp
+/CRM-Backend/CRMWebAPI
+/CRM-Backend/CRM-WebAPI
+=======
 *.v2
 /.gitignore
+>>>>>>> main
+/CRM-Backend/.vs/CRM-Backend/FileContentIndex/02f47797-031b-42e1-b226-41d4d697fd33.vsidx
+/CRM-Backend/.vs/CRM-Backend/FileContentIndex/35bf4395-af76-4dd3-865a-5c3ee2dae1fd.vsidx
+/CRM-Backend/.vs/CRM-Backend/FileContentIndex/21c3a011-79ed-4cff-a409-4707e107ac2b.vsidx
+/CRM-Backend/.vs/CRM-Backend/FileContentIndex/3735daa2-3712-4aaf-9f82-b5e58e7d6faf.vsidx
+/CRM-Backend/.vs/CRM-Backend/FileContentIndex/95271fe1-21d0-4098-a8d0-75b5fe5b511d.vsidx
+/CRM-Backend/.vs/CRM-Backend/FileContentIndex/dc46ef19-669d-4024-9ad5-2bc4c1aacfd3.vsidx
+/CRM-Backend/.vs/CRM-Backend/FileContentIndex/97177619-b09c-44f9-bb8c-ceb3dfae3115.vsidx
+/CRM-Backend/.vs/CRM-Backend/FileContentIndex/32f71f3c-87fb-455a-99ff-a5de4bb7ccb2.vsidx
+/CRM-Backend/.vs/CRM-Backend/FileContentIndex/4d131b3d-c97e-4fe1-8bb4-d5071564a6b6.vsidx
+/CRM-Backend/.vs/CRM-Backend/FileContentIndex/8141186c-d1fa-4a8c-acb9-35eea69c14d1.vsidx
