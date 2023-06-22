@@ -21,12 +21,7 @@ namespace CRM_API.Controllers
         {
             this.applicationDbContext = applicationDbContext;
         }
-        [HttpGet]
-        public async Task<IActionResult> Get()
-        {
-            var sectors = await applicationDbContext.Sectors.ToListAsync();
-            return Ok(sectors);
-        }
+      
         [HttpPost]
         public async Task<IActionResult> Add()
         {
@@ -42,6 +37,14 @@ namespace CRM_API.Controllers
 
             return Ok();
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Get()
+        {
+            var sectors = await applicationDbContext.Sectors.ToListAsync();
+            return Ok(sectors);
+        }
+
         [HttpPut]
         public async Task<IActionResult> Update()
         {
