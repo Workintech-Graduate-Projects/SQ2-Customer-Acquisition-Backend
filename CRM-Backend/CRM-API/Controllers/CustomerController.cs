@@ -17,16 +17,21 @@ namespace CRM_API.Controllers
             this.applicationDbContext = applicationDbContext;
         }
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> GetAllCustomers()
         {
-            var customer = await applicationDbContext.Customers.ToListAsync();
 
-            return Ok(customer);
+            var allCustomers = await applicationDbContext.Customers.ToListAsync();
+
+            //var lastNameFilter = await applicationDbContext.Customers
+            //    .Where(i => i.LastName == "İleri")
+            //    .Where(i=>i.FirstName != "rumeysa")
+            //    .ToListAsync();
+
+            return Ok(allCustomers);
         }
         [HttpPost]
         public async Task<IActionResult> Add()
         {
-            
 
             Customer cs = new Customer()
             {
@@ -34,11 +39,44 @@ namespace CRM_API.Controllers
                 LastName = "ileri",
                 ExperienceYear = 5,
                 Age = 28,
-                SectorId=1,
-                PositionId=1
+                SectorId = 1,
+                PositionId = 1
             };
 
             await applicationDbContext.Customers.AddAsync(cs);
+            await applicationDbContext.SaveChangesAsync();
+
+            return Ok();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var customer = await applicationDbContext.Customers.FirstOrDefaultAsync(i => i.Id == id);
+
+            if (customer != null)
+            {
+                applicationDbContext.Customers.Remove(customer);
+            }
+
+            await applicationDbContext.SaveChangesAsync();
+
+            return Ok();
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> Update()
+        {
+            var customer = await applicationDbContext.Customers.FirstOrDefaultAsync();
+
+            if (customer != null)
+            {
+                customer.FirstName = "tanju";
+                customer.LastName = "ileri";
+
+                applicationDbContext.Customers.Update(customer);
+            }
+
             await applicationDbContext.SaveChangesAsync();
 
             return Ok();
