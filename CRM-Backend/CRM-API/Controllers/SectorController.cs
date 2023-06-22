@@ -55,6 +55,18 @@ namespace CRM_API.Controllers
             await applicationDbContext.SaveChangesAsync();
             return Ok();
         }
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var sector = await applicationDbContext.Sectors.FirstOrDefaultAsync(i => i.Id == id);
+            if (sector != null)
+            {
+                applicationDbContext.Sectors.Remove(sector);
+            }
+            await applicationDbContext.SaveChangesAsync();
+
+            return Ok();
+        }
 
     }
 }
