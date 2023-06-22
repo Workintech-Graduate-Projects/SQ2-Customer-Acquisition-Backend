@@ -1,34 +1,40 @@
 {
   "format": 1,
   "restore": {
-    "/Users/pasa/SQ2-Customer-Acquisition-Backend/CRM-Backend/CRM-API/CRM-API.csproj": {}
+    "C:\\Users\\Sertaç\\Documents\\Projeler\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-API\\CRM-API.csproj": {}
   },
   "projects": {
-    "/Users/pasa/SQ2-Customer-Acquisition-Backend/CRM-Backend/CRM-API/CRM-API.csproj": {
+    "C:\\Users\\Sertaç\\Documents\\Projeler\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-API\\CRM-API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/pasa/SQ2-Customer-Acquisition-Backend/CRM-Backend/CRM-API/CRM-API.csproj",
+        "projectUniqueName": "C:\\Users\\Sertaç\\Documents\\Projeler\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-API\\CRM-API.csproj",
         "projectName": "CRM-API",
-        "projectPath": "/Users/pasa/SQ2-Customer-Acquisition-Backend/CRM-Backend/CRM-API/CRM-API.csproj",
-        "packagesPath": "/Users/pasa/.nuget/packages/",
-        "outputPath": "/Users/pasa/SQ2-Customer-Acquisition-Backend/CRM-Backend/CRM-API/obj/",
+        "projectPath": "C:\\Users\\Sertaç\\Documents\\Projeler\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-API\\CRM-API.csproj",
+        "packagesPath": "C:\\Users\\Sertaç\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Sertaç\\Documents\\Projeler\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-API\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/pasa/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Sertaç\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "/usr/local/share/dotnet/sdk/7.0.302/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files (x86)\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/pasa/SQ2-Customer-Acquisition-Backend/CRM-Backend/CRM-DataAccess/CRM-DataAccess.csproj": {
-                "projectPath": "/Users/pasa/SQ2-Customer-Acquisition-Backend/CRM-Backend/CRM-DataAccess/CRM-DataAccess.csproj"
+              "C:\\Users\\Sertaç\\Documents\\Projeler\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-DataAccess\\CRM-DataAccess.csproj": {
+                "projectPath": "C:\\Users\\Sertaç\\Documents\\Projeler\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-DataAccess\\CRM-DataAccess.csproj"
               }
             }
           }
@@ -59,6 +65,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x86",
+              "version": "[6.0.18, 6.0.18]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -67,26 +79,32 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.302/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/pasa/SQ2-Customer-Acquisition-Backend/CRM-Backend/CRM-Common/CRM-Common.csproj": {
+    "C:\\Users\\Sertaç\\Documents\\Projeler\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-Common\\CRM-Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/pasa/SQ2-Customer-Acquisition-Backend/CRM-Backend/CRM-Common/CRM-Common.csproj",
+        "projectUniqueName": "C:\\Users\\Sertaç\\Documents\\Projeler\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-Common\\CRM-Common.csproj",
         "projectName": "CRM-Common",
-        "projectPath": "/Users/pasa/SQ2-Customer-Acquisition-Backend/CRM-Backend/CRM-Common/CRM-Common.csproj",
-        "packagesPath": "/Users/pasa/.nuget/packages/",
-        "outputPath": "/Users/pasa/SQ2-Customer-Acquisition-Backend/CRM-Backend/CRM-Common/obj/",
+        "projectPath": "C:\\Users\\Sertaç\\Documents\\Projeler\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-Common\\CRM-Common.csproj",
+        "packagesPath": "C:\\Users\\Sertaç\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Sertaç\\Documents\\Projeler\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-Common\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/pasa/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Sertaç\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -120,34 +138,40 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.302/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/pasa/SQ2-Customer-Acquisition-Backend/CRM-Backend/CRM-DataAccess/CRM-DataAccess.csproj": {
+    "C:\\Users\\Sertaç\\Documents\\Projeler\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-DataAccess\\CRM-DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/pasa/SQ2-Customer-Acquisition-Backend/CRM-Backend/CRM-DataAccess/CRM-DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\Sertaç\\Documents\\Projeler\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-DataAccess\\CRM-DataAccess.csproj",
         "projectName": "CRM-DataAccess",
-        "projectPath": "/Users/pasa/SQ2-Customer-Acquisition-Backend/CRM-Backend/CRM-DataAccess/CRM-DataAccess.csproj",
-        "packagesPath": "/Users/pasa/.nuget/packages/",
-        "outputPath": "/Users/pasa/SQ2-Customer-Acquisition-Backend/CRM-Backend/CRM-DataAccess/obj/",
+        "projectPath": "C:\\Users\\Sertaç\\Documents\\Projeler\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-DataAccess\\CRM-DataAccess.csproj",
+        "packagesPath": "C:\\Users\\Sertaç\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Sertaç\\Documents\\Projeler\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-DataAccess\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/pasa/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Sertaç\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/pasa/SQ2-Customer-Acquisition-Backend/CRM-Backend/CRM-Common/CRM-Common.csproj": {
-                "projectPath": "/Users/pasa/SQ2-Customer-Acquisition-Backend/CRM-Backend/CRM-Common/CRM-Common.csproj"
+              "C:\\Users\\Sertaç\\Documents\\Projeler\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-Common\\CRM-Common.csproj": {
+                "projectPath": "C:\\Users\\Sertaç\\Documents\\Projeler\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-Common\\CRM-Common.csproj"
               }
             }
           }
@@ -199,7 +223,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.302/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     }
