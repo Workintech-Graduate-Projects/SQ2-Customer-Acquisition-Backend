@@ -31,3 +31,6 @@
 /CRM-Backend/.vs/CRM-Backend/FileContentIndex/4d131b3d-c97e-4fe1-8bb4-d5071564a6b6.vsidx
 /CRM-Backend/.vs/CRM-Backend/FileContentIndex/8141186c-d1fa-4a8c-acb9-35eea69c14d1.vsidx
 /CRM-Backend/.vs/CRM-Backend/FileContentIndex
+/CRM-Backend/CRM-Common/obj
+/CRM-Backend/CRM-DataAccess/obj/Debug/net6.0/CRM-DataAccess.csproj.AssemblyReference.cache
+/.gitignore
