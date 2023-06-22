@@ -54,6 +54,8 @@ namespace CRM_API.Controllers
                 sector.Group = "B";
                 sector.Score = 70;
 
+
+
                 applicationDbContext.Sectors.Update(sector);
             }
             await applicationDbContext.SaveChangesAsync();
