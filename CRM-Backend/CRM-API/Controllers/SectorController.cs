@@ -46,14 +46,12 @@ namespace CRM_API.Controllers
         public async Task<IActionResult> Update()
         {
             var sector = await applicationDbContext.Sectors.FirstOrDefaultAsync();
-            
             if(sector != null)
             {
                 sector.Name = "Tarım";
                 sector.Group = "B";
                 sector.Score = 70;
             }
-
             await applicationDbContext.SaveChangesAsync();
             return Ok();
         }
