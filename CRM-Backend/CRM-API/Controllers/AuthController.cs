@@ -8,7 +8,7 @@ namespace CRM_API.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        [HttpPost("register")]
-        public async Task<ActionResult<User>> Register()
+        //[HttpPost("register")]
+        //public async Task<ActionResult<User>> Register()
     }
 }
