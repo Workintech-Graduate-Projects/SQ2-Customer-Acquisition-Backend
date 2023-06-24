@@ -1051,29 +1051,40 @@
           }
         }
       },
-      "CRM-Common/1.0.0": {
+      "CRM.Common/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "compile": {
-          "bin/placeholder/CRM-Common.dll": {}
+          "bin/placeholder/CRM.Common.dll": {}
         },
         "runtime": {
-          "bin/placeholder/CRM-Common.dll": {}
+          "bin/placeholder/CRM.Common.dll": {}
         }
       },
-      "CRM-DataAccess/1.0.0": {
+      "CRM.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/CRM.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Domain.dll": {}
+        }
+      },
+      "CRM.Persistence/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "CRM-Common": "1.0.0",
+          "CRM.Common": "1.0.0",
+          "CRM.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "8.0.0-preview.5.23280.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0-preview.5.23280.1"
         },
         "compile": {
-          "bin/placeholder/CRM-DataAccess.dll": {}
+          "bin/placeholder/CRM.Persistence.dll": {}
         },
         "runtime": {
-          "bin/placeholder/CRM-DataAccess.dll": {}
+          "bin/placeholder/CRM.Persistence.dll": {}
         }
       }
     }
@@ -3082,20 +3093,25 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "CRM-Common/1.0.0": {
+    "CRM.Common/1.0.0": {
       "type": "project",
-      "path": "../CRM-Common/CRM-Common.csproj",
-      "msbuildProject": "../CRM-Common/CRM-Common.csproj"
+      "path": "../CRM-Common/CRM.Common.csproj",
+      "msbuildProject": "../CRM-Common/CRM.Common.csproj"
     },
-    "CRM-DataAccess/1.0.0": {
+    "CRM.Domain/1.0.0": {
       "type": "project",
-      "path": "../CRM-DataAccess/CRM-DataAccess.csproj",
-      "msbuildProject": "../CRM-DataAccess/CRM-DataAccess.csproj"
+      "path": "../CRM.Domain/CRM.Domain.csproj",
+      "msbuildProject": "../CRM.Domain/CRM.Domain.csproj"
+    },
+    "CRM.Persistence/1.0.0": {
+      "type": "project",
+      "path": "../CRM-DataAccess/CRM.Persistence.csproj",
+      "msbuildProject": "../CRM-DataAccess/CRM.Persistence.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "CRM-DataAccess >= 1.0.0",
+      "CRM.Persistence >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.5.0"
     ]
   },
@@ -3106,9 +3122,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rumey\\source\\repos\\Workintech-Graduate-Projects\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-API\\CRM-API.csproj",
-      "projectName": "CRM-API",
-      "projectPath": "C:\\Users\\rumey\\source\\repos\\Workintech-Graduate-Projects\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-API\\CRM-API.csproj",
+      "projectUniqueName": "C:\\Users\\rumey\\source\\repos\\Workintech-Graduate-Projects\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-API\\CRM.API.csproj",
+      "projectName": "CRM.API",
+      "projectPath": "C:\\Users\\rumey\\source\\repos\\Workintech-Graduate-Projects\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-API\\CRM.API.csproj",
       "packagesPath": "C:\\Users\\rumey\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\rumey\\source\\repos\\Workintech-Graduate-Projects\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-API\\obj\\",
       "projectStyle": "PackageReference",
@@ -3133,8 +3149,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\rumey\\source\\repos\\Workintech-Graduate-Projects\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-DataAccess\\CRM-DataAccess.csproj": {
-              "projectPath": "C:\\Users\\rumey\\source\\repos\\Workintech-Graduate-Projects\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-DataAccess\\CRM-DataAccess.csproj"
+            "C:\\Users\\rumey\\source\\repos\\Workintech-Graduate-Projects\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-DataAccess\\CRM.Persistence.csproj": {
+              "projectPath": "C:\\Users\\rumey\\source\\repos\\Workintech-Graduate-Projects\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-DataAccess\\CRM.Persistence.csproj"
             }
           }
         }
