@@ -55,9 +55,9 @@ namespace CRM.Application.Services
         public async Task<PositionDto> Update(PositionDto entity)
         {
             Position position = mapper.Map<PositionDto, Position>(entity);
-            var toUpdatePosition = await positionRepository.Update(position);
+            await positionRepository.Update(position);
 
-            return toUpdatePosition;
+            return entity;
             
         }
     }
