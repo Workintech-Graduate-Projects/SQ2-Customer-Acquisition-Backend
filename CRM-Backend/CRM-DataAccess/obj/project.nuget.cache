@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8qLXDI4z+IrJhdHPdobJFHnuiTEdaj7vmhxQ5VS/qfUGbnmeLAtCiu7WBCvuEkObNyGgyhZbUJPkrMwR/TTyxQ==",
+  "dgSpecHash": "3hVNmL2Iu3St1GlxMMByKntkiFsbVqgQZv5V1Oe3yD/DZAENU9N7/szmieMGiiSWPTtEOo859fqwjZdRmLjFKg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rumey\\source\\repos\\Workintech-Graduate-Projects\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-DataAccess\\CRM-DataAccess.csproj",
+  "projectFilePath": "C:\\Users\\rumey\\source\\repos\\Workintech-Graduate-Projects\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-DataAccess\\CRM.Persistence.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rumey\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\rumey\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

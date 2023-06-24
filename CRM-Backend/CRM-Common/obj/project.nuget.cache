@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mjk4dW16DMAepKVo9Ile1/6Cw8e+JQIxYw09mxiXYIvZ7elWZPvUwxgblCtrEMLZseKq46vNvC2oZ1bAvMyHpw==",
+  "dgSpecHash": "odTylORoNPw8q5mic1z0y4fZyH/iIZ0we2xfYHK2snNGejCoi2TQqqgxYfb2R+tXz1eruHQwF7e/pophxnj/OA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rumey\\source\\repos\\Workintech-Graduate-Projects\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-Common\\CRM-Common.csproj",
+  "projectFilePath": "C:\\Users\\rumey\\source\\repos\\Workintech-Graduate-Projects\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM-Common\\CRM.Common.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
