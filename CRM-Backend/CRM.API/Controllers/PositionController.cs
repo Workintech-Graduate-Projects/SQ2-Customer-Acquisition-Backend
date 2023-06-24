@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CRM.Application.Dtos;
+using CRM.Application.Interfaces.Services;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -12,61 +14,71 @@ namespace CRM_API.Controllers
     [ApiController]
     public class PositionController : ControllerBase
     {
-        //private readonly ApplicationDbContext applicationDbContext;
+        private readonly IPositionService positionService;
 
-        //public PositionController(ApplicationDbContext applicationDbContext)
-        //{
-        //    this.applicationDbContext = applicationDbContext;
-        //}
-        //[HttpGet]
-        //public async Task<IActionResult> Get()
-        //{
-        //    var positions = applicationDbContext.Positions.ToListAsync();
-        //    return Ok(positions);
-        //}
-        //[HttpPost]
-        //public async Task<IActionResult> Add()
-        //{
-        //    Position position = new Position();
-        //    if (position != null) {
+        public PositionController(IPositionService positionService)
+        {
+            this.positionService = positionService;
+        }
+        [HttpGet]
+        public async Task<IActionResult> Get()
+        {
+            try
+            {
+                var positions = positionService.GetAll();
+                return Ok();
+            }
+            catch (Exception e)
+            {
 
-        //        position.Id = 1;
-        //        position.Name = "Senior";
-        //        position.Score = 70;
-          
-        //    }
-        //await applicationDbContext.Positions.AddAsync(position);
-        //await applicationDbContext.SaveChangesAsync();
-        //return Ok();
-        //}
+                return Problem($"Hata Var!!!! {e.Message} {e.StackTrace}");
+            }
+        }
 
-        //[HttpDelete("{id}")]
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            try
+            {
+                var positions = positionService.GetById(id);
+                return Ok();
+            }
+            catch (Exception e)
+            {
 
-        //public async Task<IActionResult> Delete(int id)
-        //{
-        //    var position = await applicationDbContext.Positions.FirstOrDefaultAsync(i => i.Id == id);
-        //    applicationDbContext.Remove(position);
+                return Problem($"Hata Var!!!! {e.Message} {e.StackTrace}");
+            }
+        }
+        [HttpPost]
+        public async Task<IActionResult> Add(PositionDto positionDto)
+        {
+            try
+            {
+                await positionService.AddAsync(positionDto);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return Problem($"Hata Var!!!! {e.Message} {e.StackTrace}");
+            }
 
-        //    await applicationDbContext.SaveChangesAsync();
-        //    return Ok();  
+        }
 
-        //}
+        [HttpPut]
+        public async Task<IActionResult> Update(PositionDto positionDto)
+        {
+            try
+            {
+                await positionService.Update(positionDto);
+                return Ok();
+            }
+            catch (Exception e)
+            {
 
-        //[HttpPut]
-        //public async Task<IActionResult> Update()
-        //{
-        //    var position = await applicationDbContext.Positions.FirstOrDefaultAsync();
-        //    if (position != null)
-        //    {
-        //        position.Name = "Junior";
-        //        position.Score = 50;
+                return Problem($"Hata Var!!!! {e.Message} {e.StackTrace}");
+            }
 
-        //        applicationDbContext.Positions.Update(position);
-        //    }
-        //    await applicationDbContext.SaveChangesAsync();
-        //    return Ok();
-
-        //}
+        }
     }
 }
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CRM.Application.Interfaces.Services
 {
-    public interface ICustomerService
+    public interface IPositionService
     {
     }
 }

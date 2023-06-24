@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "7qD5YSh/u94Hx6ahpHnliVHjdo6pXcpY/QzIkEMHwLFtn4igpzBISGTNqD6qTAxZvshuGGQd3juN3GjbywcLPg==",
+  "dgSpecHash": "DeN0nOvOs97CpPds2KmZ62aX0Eozzj26hxXMZfvzdB2fNhUBz1kiqT1Q3zTW46pDF7E1pw2bbnxpngqfOdCYMA==",
   "success": true,
   "projectFilePath": "C:\\Users\\rumey\\source\\repos\\Workintech-Graduate-Projects\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM.Application\\CRM.Application.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\rumey\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\rumey\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }

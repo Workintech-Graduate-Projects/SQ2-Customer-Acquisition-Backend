@@ -166,3 +166,5 @@ C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisitio
 C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.API\obj\Debug\net6.0\CRM.API.csproj.CopyComplete
 C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.API\obj\Debug\net6.0\CRM.API.genruntimeconfig.cache
 C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.API\obj\Debug\net6.0\ref\CRM.API.dll
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.API\bin\Debug\net6.0\CRM.Application.dll
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.API\bin\Debug\net6.0\CRM.Application.pdb

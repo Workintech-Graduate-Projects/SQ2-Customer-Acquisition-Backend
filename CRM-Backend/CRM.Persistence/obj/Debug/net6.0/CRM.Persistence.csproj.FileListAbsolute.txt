@@ -36,3 +36,5 @@ C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisitio
 C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.Persistence\obj\Debug\net6.0\CRM.Persistence.pdb
 C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.Persistence\obj\Debug\net6.0\CRM.Persistence.genruntimeconfig.cache
 C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.Persistence\obj\Debug\net6.0\ref\CRM.Persistence.dll
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.Persistence\bin\Debug\net6.0\CRM.Application.dll
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.Persistence\bin\Debug\net6.0\CRM.Application.pdb
