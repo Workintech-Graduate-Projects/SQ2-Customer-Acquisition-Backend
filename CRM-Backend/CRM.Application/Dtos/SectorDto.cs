@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CRM.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,10 @@ namespace CRM.Application.Dtos
 {
     public class SectorDto
     {
+        public int Id { get; set; }
+        public string? Name { get; set; }
+        public string? Group { get; set; }
+        public int? Score { get; set; }
+        public ICollection<Customer>? Customers { get; set; }
     }
 }
