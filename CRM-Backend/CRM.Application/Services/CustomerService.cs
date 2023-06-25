@@ -1,12 +1,18 @@
 ﻿using AutoMapper;
+using AutoMapper.Configuration.Annotations;
 using CRM.Application.Dtos;
 using CRM.Application.Interfaces.Repositories;
 using CRM.Application.Interfaces.Services;
 using CRM.Domain.Entities;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Schema;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
+using System.Text.Json;
+using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 
 namespace CRM.Application.Services
@@ -59,5 +65,61 @@ namespace CRM.Application.Services
             return entity;
         }
 
+        public async Task<List<CustomerDto>> UpdateCustomerDataFromTypeform()
+        {
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://api.typeform.com/forms/gWvnKsCW/responses");
+            request.Headers.Add("Authorization", "Bearer tfp_6gc41itur7629WD6hmdMcrt8dzrRbPLXAK1WkS52mKaA_3mPHXKcv6CmQ7j");
+            request.Method = "GET";
+            List<Customer> customers = new();
+            List<CustomerDto> customerDtos = new();
+
+            using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+            {
+                // Process the response
+                using (Stream responseStream = response.GetResponseStream())
+                {
+                    StreamReader reader = new StreamReader(responseStream);
+                    string responseText = reader.ReadToEnd();
+
+                    //Deserialize the responseText to a JSON array
+                    JObject jo = JObject.Parse(responseText);
+                    JArray items = jo["items"].Value<JArray>();
+                    JObject item = items[0].Value<JObject>();
+                    JArray answers = item["answers"].Value<JArray>();
+
+                    foreach (var answer in answers)
+                    {
+                        string type = answer["type"].Value<string>();
+                        string text = answer["text"].Value<string>();
+                        JObject field = answer["field"].Value<JObject>();
+                        string reff = field["ref"].Value<string>();
+
+                        
+                    }
+
+
+
+                    if (jsonDocument.RootElement.ValueKind == JsonValueKind.Array)
+                    {
+                        JsonArray jsonArray = jsonDocument.RootElement.EnumerateArray().ToArray();
+
+                        List<CustomerDto> allCustomerDtos = new();
+
+                        foreach (JsonElement jsonElement in jsonArray)
+                        {
+                            allCustomerDtos.Add(jsonElement);
+                        }
+                    }
+
+                }
+            }
+
+
+
+            //customerRepository.UpdateCustomerDataFromTypeform(data)
+
+
+            return await Task.FromResult<List<CustomerDto>>(new List<CustomerDto>());
+        }
     }
 }

@@ -16,6 +16,7 @@ namespace CRM_API.Controllers
         {
             this.customerService = customerService;
         }
+
         [HttpGet]
         public async Task<ActionResult<List<CustomerDto>>> GetAllCustomers()
         {
@@ -31,6 +32,23 @@ namespace CRM_API.Controllers
                 return Problem($"Hata !!! {e.Message} {e.StackTrace}");
             }
         }
+
+        [HttpGet]
+        public async Task<ActionResult<List<CustomerDto>>> UpdateCustomerDataFromTypeform()
+        {
+            try
+            {
+                var typeformCustomersResponses = await customerService.UpdateCustomerDataFromTypeform();
+
+                return typeformCustomersResponses;
+            }
+            catch (Exception e)
+            {
+
+                return Problem($"Hata !!! {e.Message} {e.StackTrace}");
+            }
+        }
+
         [HttpGet("{id}")]
         public async Task<ActionResult<CustomerDto>> GetCustomerById(int id)
         {
@@ -45,6 +63,7 @@ namespace CRM_API.Controllers
                 return Problem($"Hata Var!!!! {e.Message} {e.StackTrace}");
             }
         }
+
         [HttpPost]
         public async Task<ActionResult<CustomerDto>> Add(CustomerDto customerDto)
         {
@@ -61,7 +80,6 @@ namespace CRM_API.Controllers
                 return Problem($"Hata !!! {e.Message} {e.StackTrace}");
             }
         }
-
 
         [HttpPut]
         public async Task<ActionResult<CustomerDto>> Update(CustomerDto customerDto)
