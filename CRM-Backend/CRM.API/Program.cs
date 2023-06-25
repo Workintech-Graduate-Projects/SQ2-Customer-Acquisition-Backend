@@ -1,3 +1,5 @@
+using CRM.Application.Interfaces.Services;
+using CRM.Application.Services;
 using CRM_Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,6 +18,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.EnableSensitiveDataLogging();
     options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
 });
+
+builder.Services.AddScoped<IPositionService, PositionService>();
 
 var app = builder.Build();
 

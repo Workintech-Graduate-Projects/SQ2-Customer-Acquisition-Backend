@@ -21,11 +21,11 @@ namespace CRM_API.Controllers
             this.positionService = positionService;
         }
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> GetAllPositions()
         {
             try
             {
-                var positions = positionService.GetAll();
+                var positions = await positionService.GetAll();
                 return Ok();
             }
             catch (Exception e)
@@ -40,7 +40,7 @@ namespace CRM_API.Controllers
         {
             try
             {
-                var positions = positionService.GetById(id);
+                var positions = await positionService.GetById(id);
                 return Ok();
             }
             catch (Exception e)
