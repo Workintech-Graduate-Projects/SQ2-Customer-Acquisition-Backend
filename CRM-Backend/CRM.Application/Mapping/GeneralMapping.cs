@@ -14,6 +14,8 @@ namespace CRM.Application.Mapping
         public GeneralMapping()
         {
             CreateMap<Position, PositionDto>().ReverseMap();
+
+            CreateMap<Customer, CustomerDto>().ReverseMap();
         }
     }
 }
