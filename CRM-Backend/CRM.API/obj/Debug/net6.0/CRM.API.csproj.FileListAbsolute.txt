@@ -86,7 +86,6 @@ C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisitio
 C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.API\obj\Debug\net6.0\CRM.API.AssemblyInfoInputs.cache
 C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.API\obj\Debug\net6.0\CRM.API.AssemblyInfo.cs
 C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.API\obj\Debug\net6.0\CRM.API.csproj.CoreCompileInputs.cache
-C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.API\obj\Debug\net6.0\CRM.API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.API\obj\Debug\net6.0\CRM.API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.API\obj\Debug\net6.0\CRM.API.dll
 C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.API\obj\Debug\net6.0\refint\CRM.API.dll
@@ -168,3 +167,6 @@ C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisitio
 C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.API\obj\Debug\net6.0\ref\CRM.API.dll
 C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.API\bin\Debug\net6.0\CRM.Application.dll
 C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.API\bin\Debug\net6.0\CRM.Application.pdb
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.API\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.API\obj\Debug\net6.0\CRM.API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.API\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "fQHHw7z1tJc6dzpogfrukxlMJ5pkgUC5pxt0q/K2wOuh3XPwiTufNAIieUoJNo6eQDMddFUIC74Ulf85J4UI5w==",
+  "dgSpecHash": "8vE40tSUsGu5jOjPMWrAW7qFIDZ0/psHRcY85mUve/mezrKnlokJbGrUFPjkJYB7L4Q6Qp2Ji3hlQfhlNdcLug==",
   "success": true,
   "projectFilePath": "C:\\Users\\rumey\\source\\repos\\Workintech-Graduate-Projects\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM.API\\CRM.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rumey\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\rumey\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\rumey\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\rumey\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\rumey\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",

@@ -1,5 +1,9 @@
+using AutoMapper;
+using CRM.Application.Interfaces.Repositories;
 using CRM.Application.Interfaces.Services;
+using CRM.Application.Mapping;
 using CRM.Application.Services;
+using CRM_DataAccess.Repositories;
 using CRM_Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 
@@ -20,6 +24,12 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 });
 
 builder.Services.AddScoped<IPositionService, PositionService>();
+builder.Services.AddScoped<ICustomerService, CustomerService>();
+builder.Services.AddScoped<ISectorService, SectorService>();
+builder.Services.AddScoped<IPositionRepository, PositionRepository>();
+builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+builder.Services.AddScoped<ISectorRepository, SectorRepository>();
+builder.Services.AddAutoMapper(typeof(GeneralMapping));
 
 var app = builder.Build();
 

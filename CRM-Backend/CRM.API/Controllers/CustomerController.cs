@@ -1,5 +1,6 @@
 ﻿using CRM.Application.Dtos;
 using CRM.Application.Interfaces.Services;
+using CRM.Application.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,13 +17,13 @@ namespace CRM_API.Controllers
             this.customerService = customerService;
         }
         [HttpGet]
-        public async Task<IActionResult> GetAllCustomers()
+        public async Task<ActionResult<List<CustomerDto>>> GetAllCustomers()
         {
             try
             {
                 var allCustomers = await customerService.GetAll();
 
-                return Ok();
+                return allCustomers;
             }
             catch (Exception e)
             {
@@ -30,15 +31,29 @@ namespace CRM_API.Controllers
                 return Problem($"Hata !!! {e.Message} {e.StackTrace}");
             }
         }
+        [HttpGet("{id}")]
+        public async Task<ActionResult<CustomerDto>> GetCustomerById(int id)
+        {
+            try
+            {
+                var customer = await customerService.GetById(id);
+                return customer;
+            }
+            catch (Exception e)
+            {
+
+                return Problem($"Hata Var!!!! {e.Message} {e.StackTrace}");
+            }
+        }
         [HttpPost]
-        public async Task<IActionResult> Add(CustomerDto customerDto)
+        public async Task<ActionResult<CustomerDto>> Add(CustomerDto customerDto)
         {
 
             try
             {
-                await customerService.AddAsync(customerDto);
+                var createdCustomer = await customerService.AddAsync(customerDto);
 
-                return Ok();
+                return createdCustomer;
             }
             catch (Exception e)
             {
@@ -49,13 +64,13 @@ namespace CRM_API.Controllers
 
 
         [HttpPut]
-        public async Task<IActionResult> Update(CustomerDto customerDto)
+        public async Task<ActionResult<CustomerDto>> Update(CustomerDto customerDto)
         {
             try
             {
-                await customerService.Update(customerDto);
+               var updatedCustomer = await customerService.Update(customerDto);
 
-                return Ok();
+                return updatedCustomer;
             }
             catch (Exception e)
             {

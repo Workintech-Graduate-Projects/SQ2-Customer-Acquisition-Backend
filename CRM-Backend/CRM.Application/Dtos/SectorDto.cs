@@ -13,6 +13,5 @@ namespace CRM.Application.Dtos
         public string? Name { get; set; }
         public string? Group { get; set; }
         public int? Score { get; set; }
-        public ICollection<Customer>? Customers { get; set; }
     }
 }

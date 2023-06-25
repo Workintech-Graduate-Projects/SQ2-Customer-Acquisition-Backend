@@ -45,9 +45,9 @@ namespace CRM.Application.Services
 
         public async Task<PositionDto> GetById(int id)
         {
-            var positionId = await positionRepository.GetById(id);
+            var searchedPosition = await positionRepository.GetById(id);
 
-            var positionDto = mapper.Map<Position, PositionDto>(positionId);
+            var positionDto = mapper.Map<Position, PositionDto>(searchedPosition);
 
             return positionDto;
         }
