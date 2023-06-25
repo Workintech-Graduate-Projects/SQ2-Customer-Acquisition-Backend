@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using CRM.Application.Dtos;
+using CRM.Application.Interfaces.Services;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CRM_API.Controllers
@@ -7,76 +9,59 @@ namespace CRM_API.Controllers
     [ApiController]
     public class CustomerController : ControllerBase
     {
-        //private readonly ApplicationDbContext applicationDbContext;
+        private readonly ICustomerService customerService;
 
-        //public CustomerController(ApplicationDbContext applicationDbContext)
-        //{
-        //    this.applicationDbContext = applicationDbContext;
-        //}
-        //[HttpGet]
-        //public async Task<IActionResult> GetAllCustomers()
-        //{
+        public CustomerController(ICustomerService customerService)
+        {
+            this.customerService = customerService;
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetAllCustomers()
+        {
+            try
+            {
+                var allCustomers = await customerService.GetAll();
 
-        //    var allCustomers = await applicationDbContext.Customers.ToListAsync();
+                return Ok();
+            }
+            catch (Exception e)
+            {
 
-        //    var lastNameFilter = await applicationDbContext.Customers
-        //        .Where(i => i.LastName == "İleri")
-        //        .Where(i => i.FirstName != "rumeysa")
-        //        .ToListAsync();
+                return Problem($"Hata !!! {e.Message} {e.StackTrace}");
+            }
+        }
+        [HttpPost]
+        public async Task<IActionResult> Add(CustomerDto customerDto)
+        {
 
-        //    return Ok(allCustomers);
-        //}
-        //[HttpPost]
-        //public async Task<IActionResult> Add()
-        //{
+            try
+            {
+                await customerService.AddAsync(customerDto);
 
-        //    Customer cs = new Customer()
-        //    {
-        //        FirstName = "rumeysa",
-        //        LastName = "ileri",
-        //        ExperienceYear = 5,
-        //        Age = 28,
-        //        SectorId = 1,
-        //        PositionId = 1
-        //    };
+                return Ok();
+            }
+            catch (Exception e)
+            {
 
-        //    await applicationDbContext.Customers.AddAsync(cs);
-        //    await applicationDbContext.SaveChangesAsync();
+                return Problem($"Hata !!! {e.Message} {e.StackTrace}");
+            }
+        }
 
-        //    return Ok();
-        //}
 
-        //[HttpDelete("{id}")]
-        //public async Task<IActionResult> Delete(int id)
-        //{
-        //    var customer = await applicationDbContext.Customers.FirstOrDefaultAsync(i => i.Id == id);
+        [HttpPut]
+        public async Task<IActionResult> Update(CustomerDto customerDto)
+        {
+            try
+            {
+                await customerService.Update(customerDto);
 
-        //    if (customer != null)
-        //    {
-        //        applicationDbContext.Customers.Remove(customer);
-        //    }
+                return Ok();
+            }
+            catch (Exception e)
+            {
 
-        //    await applicationDbContext.SaveChangesAsync();
-
-        //    return Ok();
-        //}
-
-        //[HttpPut]
-        //public async Task<IActionResult> Update()
-        //{
-        //    var customer = await applicationDbContext.Customers.FirstOrDefaultAsync();
-
-        //    if (customer != null)
-        //    {
-        //        customer.FirstName = "tanju";
-        //        customer.LastName = "ileri";
-
-        //        applicationDbContext.Customers.Update(customer);
-        //    }
-
-        //    await applicationDbContext.SaveChangesAsync();
-
-        //    return Ok();
-        //}
+                return Problem($"Hata !!! {e.Message} {e.StackTrace}");
+            }
+        }
     }
 }

@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CRM.Application.Dtos
+namespace CRM.Application.Interfaces.Services
 {
-    public class RoleDto
+    internal interface ISectorService
     {
-        public int Id { get; set; }
-        public string? Name { get; set; }
     }
 }
