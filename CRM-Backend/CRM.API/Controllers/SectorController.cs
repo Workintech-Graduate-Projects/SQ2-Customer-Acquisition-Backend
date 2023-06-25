@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using CRM.Application.Dtos;
+using CRM.Application.Interfaces.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,64 +14,75 @@ namespace CRM_API.Controllers
     [ApiController]
     public class SectorController : ControllerBase
     {
-        //private readonly ApplicationDbContext applicationDbContext;
+        private readonly ISectorService sectorService;
 
-        //public SectorController(ApplicationDbContext applicationDbContext)
-        //{
-        //    this.applicationDbContext = applicationDbContext;
-        //}
+        public SectorController(ISectorService sectorService)
+        {
+            this.sectorService = sectorService;
+        }
 
-        //[HttpPost]
-        //public async Task<IActionResult> Add()
-        //{
-        //    Sector sector = new Sector()
-        //    {
-        //       Name = "Bilgi Teknolojileri ve Medya",
-        //       Group = "A",
-        //       Score = 80,
-        //    };
+        [HttpPost]
+        public async Task<ActionResult<SectorDto>> Add(SectorDto sectorDto)
+        {
+            try
+            {
+                var createdSector = await sectorService.AddAsync(sectorDto);
+                return createdSector;
+            }
+            catch (Exception e)
+            {
 
-        //    await applicationDbContext.Sectors.AddAsync(sector);
-        //    await applicationDbContext.SaveChangesAsync();
-        //    return Ok();
-        //}
+                return Problem($"Hata !!! {e.Message} {e.StackTrace}");
+            }
+        }
 
-        //[HttpGet]
-        //public async Task<IActionResult> Get()
-        //{
-        //    var sectors = await applicationDbContext.Sectors.ToListAsync();
-        //    return Ok(sectors);
-        //}
+        [HttpGet]
+        public async Task<ActionResult<List<SectorDto>>> GetAllSectors()
+        {
+            try
+            {
+                var sectors = await sectorService.GetAll();
 
-        //[HttpPut]
-        //public async Task<IActionResult> Update()
-        //{
-        //    var sector = await applicationDbContext.Sectors.FirstOrDefaultAsync();
-        //    if(sector != null)
-        //    {
-        //        sector.Name = "Tarım";
-        //        sector.Group = "B";
-        //        sector.Score = 70;
+                return sectors;
+            }
+            catch (Exception e)
+            {
 
+                return Problem($"Hata !!! {e.Message} {e.StackTrace}");
+            }
+        }
+        [HttpGet("{id}")]
+        public async Task<ActionResult<SectorDto>> GetSectorById(int id)
+        {
+            try
+            {
+                var sector = await sectorService.GetById(id);
 
+                return sector;
+            }
+            catch (Exception e)
+            {
 
-        //        applicationDbContext.Sectors.Update(sector);
-        //    }
-        //    await applicationDbContext.SaveChangesAsync();
-        //    return Ok();
-        //}
+                return Problem($"Hata !!! {e.Message} {e.StackTrace}");
+            }
+        }
 
-        //[HttpDelete("{id}")]
-        //public async Task<IActionResult> Delete(int id)
-        //{
-        //    var sector = await applicationDbContext.Sectors.FirstOrDefaultAsync(i => i.Id == id);
-        //    if (sector != null)
-        //    {
-        //        applicationDbContext.Sectors.Remove(sector);
-        //    }
-        //    await applicationDbContext.SaveChangesAsync();
-        //    return Ok();
-        //}
+        [HttpPut]
+        public async Task<ActionResult<SectorDto>> Update(SectorDto sectorDto)
+        {
+            try
+            {
+                var updatedSector = await sectorService.Update(sectorDto);
+
+                return updatedSector;
+            }
+            catch (Exception e)
+            {
+
+                return Problem($"Hata !!! {e.Message} {e.StackTrace}");
+            }
+        }
+
 
     }
 }

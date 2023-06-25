@@ -37,9 +37,22 @@ namespace CRM_DataAccess.Repositories
 
         public async Task<T> Update(T entity)
         {
-            _dbContext.Update(entity);
-            await _dbContext.SaveChangesAsync();
-            return await Task.FromResult(entity);
+            try
+            {
+                if (entity.Id != null)
+                {
+                    _dbContext.Update(entity);
+                    await _dbContext.SaveChangesAsync();
+                }
+                return await Task.FromResult(entity);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
+            
         }
     }
 }

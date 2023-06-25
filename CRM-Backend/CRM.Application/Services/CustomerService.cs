@@ -43,6 +43,13 @@ namespace CRM.Application.Services
             return customerDtos;
 
         }
+        public async Task<CustomerDto> GetById(int id)
+        {
+            var searchedCustomer = await customerRepository.GetById(id);
+            var sectorDto = mapper.Map<Customer, CustomerDto>(searchedCustomer);
+
+            return sectorDto;
+        }
 
         public async Task<CustomerDto> Update(CustomerDto entity)
         {

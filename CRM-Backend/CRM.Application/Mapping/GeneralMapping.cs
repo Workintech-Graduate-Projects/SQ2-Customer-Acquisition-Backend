@@ -16,6 +16,8 @@ namespace CRM.Application.Mapping
             CreateMap<Position, PositionDto>().ReverseMap();
 
             CreateMap<Customer, CustomerDto>().ReverseMap();
+
+            CreateMap<Sector, SectorDto>().ReverseMap();
         }
     }
 }

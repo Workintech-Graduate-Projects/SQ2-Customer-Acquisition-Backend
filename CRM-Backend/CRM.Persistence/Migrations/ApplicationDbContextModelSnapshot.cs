@@ -36,6 +36,9 @@ namespace CRM_DataAccess.Migrations
                         .HasColumnType("int")
                         .HasColumnName("Age");
 
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Email")
                         .HasMaxLength(100)
                         .HasColumnType("varchar")
@@ -91,6 +94,9 @@ namespace CRM_DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Name")
                         .HasMaxLength(100)
                         .HasColumnType("varchar")
@@ -114,6 +120,9 @@ namespace CRM_DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Name")
                         .HasMaxLength(100)
                         .HasColumnType("varchar")
@@ -132,6 +141,9 @@ namespace CRM_DataAccess.Migrations
                         .HasColumnName("Id");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Group")
                         .HasMaxLength(100)
@@ -160,6 +172,9 @@ namespace CRM_DataAccess.Migrations
                         .HasColumnName("Id");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("FirstName")
                         .HasMaxLength(100)
