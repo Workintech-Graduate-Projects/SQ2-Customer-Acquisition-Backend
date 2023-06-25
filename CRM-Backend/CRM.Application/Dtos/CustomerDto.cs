@@ -18,8 +18,6 @@ namespace CRM.Application.Dtos
         public int Age { get; set; }
         public string? University { get; set; }
         public int SectorId { get; set; }
-        public Sector? Sector { get; set; }
         public int PositionId { get; set; }
-        public Position? Position { get; set; }
     }
 }

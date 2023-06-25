@@ -10,6 +10,7 @@ namespace CRM.Application.Interfaces.Services
     public interface ICustomerService
     {
         Task<List<CustomerDto>> GetAll();
+        Task<CustomerDto> GetById(int id);
         Task<CustomerDto> AddAsync(CustomerDto entity);
         Task<CustomerDto> Update(CustomerDto entity);
     }

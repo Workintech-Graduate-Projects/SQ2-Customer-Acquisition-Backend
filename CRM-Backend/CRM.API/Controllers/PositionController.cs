@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CRM.Application.Dtos;
 using CRM.Application.Interfaces.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -20,13 +21,15 @@ namespace CRM_API.Controllers
         {
             this.positionService = positionService;
         }
+        
+        
         [HttpGet]
-        public async Task<IActionResult> GetAllPositions()
+        public async Task<ActionResult<List<PositionDto>>> GetAllPositions()
         {
             try
             {
                 var positions = await positionService.GetAll();
-                return Ok();
+                return positions;
             }
             catch (Exception e)
             {
@@ -34,14 +37,14 @@ namespace CRM_API.Controllers
                 return Problem($"Hata Var!!!! {e.Message} {e.StackTrace}");
             }
         }
-
+        
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(int id)
+        public async Task<ActionResult<PositionDto>> GetPositionById(int id)
         {
             try
             {
-                var positions = await positionService.GetById(id);
-                return Ok();
+                var position = await positionService.GetById(id);
+                return position;
             }
             catch (Exception e)
             {
@@ -49,13 +52,14 @@ namespace CRM_API.Controllers
                 return Problem($"Hata Var!!!! {e.Message} {e.StackTrace}");
             }
         }
+        
         [HttpPost]
-        public async Task<IActionResult> Add(PositionDto positionDto)
+        public async Task<ActionResult<PositionDto>> Add(PositionDto positionDto)
         {
             try
             {
-                await positionService.AddAsync(positionDto);
-                return Ok();
+                var createdPosition = await positionService.AddAsync(positionDto);
+                return createdPosition;
             }
             catch (Exception e)
             {
@@ -65,12 +69,12 @@ namespace CRM_API.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> Update(PositionDto positionDto)
+        public async Task<ActionResult<PositionDto>> Update(PositionDto positionDto)
         {
             try
             {
-                await positionService.Update(positionDto);
-                return Ok();
+                var updatedPosition = await positionService.Update(positionDto);
+                return updatedPosition;
             }
             catch (Exception e)
             {
