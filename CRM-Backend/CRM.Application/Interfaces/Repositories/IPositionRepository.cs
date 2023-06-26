@@ -9,5 +9,6 @@ namespace CRM.Application.Interfaces.Repositories
 {
     public interface IPositionRepository :IGenericRepository<Position>
     {
+        Task<Dictionary<string, int>> GetPositionNamesAndIds();
     }
 }

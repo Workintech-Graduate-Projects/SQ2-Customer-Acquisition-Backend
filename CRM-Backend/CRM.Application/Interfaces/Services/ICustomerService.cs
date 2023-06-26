@@ -1,4 +1,5 @@
 ﻿using CRM.Application.Dtos;
+using CRM.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,5 +14,6 @@ namespace CRM.Application.Interfaces.Services
         Task<CustomerDto> GetById(int id);
         Task<CustomerDto> AddAsync(CustomerDto entity);
         Task<CustomerDto> Update(CustomerDto entity);
+        Task<List<CustomerDto>> UpdateCustomerDataFromTypeform();
     }
 }

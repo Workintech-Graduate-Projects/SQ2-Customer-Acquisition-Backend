@@ -9,5 +9,6 @@ namespace CRM.Application.Interfaces.Repositories
 {
     public interface ICustomerRepository: IGenericRepository<Customer>
     {
+        Task<List<Customer>> UpdateCustomerDataFromTypeform(List<Customer> entity);
     }
 }
