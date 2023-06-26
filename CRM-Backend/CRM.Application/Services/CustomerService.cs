@@ -20,10 +20,14 @@ namespace CRM.Application.Services
     public class CustomerService : ICustomerService
     {
         private readonly ICustomerRepository customerRepository;
+        private readonly ISectorRepository sectorRepository;
+        private readonly IPositionRepository positionRepository;
         private readonly IMapper mapper;
-        public CustomerService(ICustomerRepository customerRepository, IMapper mapper)
+        public CustomerService(ICustomerRepository customerRepository, ISectorRepository sectorRepository, IPositionRepository positionRepository, IMapper mapper)
         {
             this.customerRepository = customerRepository;
+            this.sectorRepository = sectorRepository;
+            this.positionRepository = positionRepository;
             this.mapper = mapper;
         }
 
@@ -67,11 +71,14 @@ namespace CRM.Application.Services
 
         public async Task<List<CustomerDto>> UpdateCustomerDataFromTypeform()
         {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://api.typeform.com/forms/gWvnKsCW/responses");
-            request.Headers.Add("Authorization", "Bearer tfp_6gc41itur7629WD6hmdMcrt8dzrRbPLXAK1WkS52mKaA_3mPHXKcv6CmQ7j");
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://api.typeform.com/forms/htBMgwwF/responses");
+            request.Headers.Add("Authorization", "Bearer tfp_GBXtzBzbQCR6jehN7QxEEnTcBcSPL6UaxECRmwUcUrVq_3mJrwXQcHAPMcv");
             request.Method = "GET";
+
             List<Customer> customers = new();
             List<CustomerDto> customerDtos = new();
+            Dictionary<string, int> sectors = await sectorRepository.GetSectorNamesAndIds();
+            Dictionary<string, int> positions = await positionRepository.GetPositionNamesAndIds();
 
             using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
             {
@@ -84,40 +91,36 @@ namespace CRM.Application.Services
                     //Deserialize the responseText to a JSON array
                     JObject jo = JObject.Parse(responseText);
                     JArray items = jo["items"].Value<JArray>();
-                    JObject item = items[0].Value<JObject>();
-                    JArray answers = item["answers"].Value<JArray>();
-
-                    foreach (var answer in answers)
+                    foreach (var it in items)
                     {
-                        string type = answer["type"].Value<string>();
-                        string text = answer["text"].Value<string>();
-                        JObject field = answer["field"].Value<JObject>();
-                        string reff = field["ref"].Value<string>();
+                        JObject item = it.Value<JObject>();
+                        JArray answers = item["answers"].Value<JArray>();
 
+                        CustomerDto dto = new();
+                        dto.FirstName = (string?)answers[0]["text"];
+                        dto.LastName = (string?)answers[1]["text"];
+                        if (sectors.ContainsKey((string?)answers[2]["text"]))
+                        {
+                            dto.SectorId = sectors[(string?)answers[2]["text"]];
+                        }
+                        if (positions.ContainsKey((string?)answers[3]["text"]))
+                        {
+                            dto.PositionId = positions[(string?)answers[3]["text"]];
+                        }
+                        dto.Phone = (string?)answers[4]["phone_number"];
+                        dto.Age = (int)answers[5]["text"];
+                        dto.University = (string?)answers[6]["text"];
+                        dto.ExperienceYear = (int)answers[7]["number"];
+
+                        customerDtos.Add(dto);
+                        customers = mapper.Map<List<CustomerDto>, List<Customer>>(customerDtos);
                         
                     }
+                    await customerRepository.UpdateCustomerDataFromTypeform(customers);
 
-
-
-                    if (jsonDocument.RootElement.ValueKind == JsonValueKind.Array)
-                    {
-                        JsonArray jsonArray = jsonDocument.RootElement.EnumerateArray().ToArray();
-
-                        List<CustomerDto> allCustomerDtos = new();
-
-                        foreach (JsonElement jsonElement in jsonArray)
-                        {
-                            allCustomerDtos.Add(jsonElement);
-                        }
-                    }
-
+                    return customerDtos;
                 }
             }
-
-
-
-            //customerRepository.UpdateCustomerDataFromTypeform(data)
-
 
             return await Task.FromResult<List<CustomerDto>>(new List<CustomerDto>());
         }

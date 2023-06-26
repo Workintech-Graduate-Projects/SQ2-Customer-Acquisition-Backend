@@ -20,7 +20,19 @@ namespace CRM_DataAccess.Repositories
 
         public async Task<List<Customer>> UpdateCustomerDataFromTypeform(List<Customer> entity)
         {
-            await _dbContext.Set<Customer>().AddRangeAsync(entity);
+            var allCustomers = await _dbContext.Customers.ToListAsync();
+            foreach (var item in allCustomers)
+            {
+                foreach (var entityItem in entity)
+                {
+                    if (entityItem!=item)
+                    {
+                        await _dbContext.AddAsync(entityItem);
+                    }
+                }
+               
+            }
+            //await _dbContext.Set<Customer>().AddRangeAsync(entity);
             await _dbContext.SaveChangesAsync();
 
             return await _dbContext.Set<Customer>().ToListAsync();

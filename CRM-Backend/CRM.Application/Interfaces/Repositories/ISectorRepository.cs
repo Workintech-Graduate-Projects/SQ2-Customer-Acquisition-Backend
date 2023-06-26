@@ -9,5 +9,6 @@ namespace CRM.Application.Interfaces.Repositories
 {
     public interface ISectorRepository: IGenericRepository<Sector>
     {
+        Task<Dictionary<string, int>> GetSectorNamesAndIds();
     }
 }
