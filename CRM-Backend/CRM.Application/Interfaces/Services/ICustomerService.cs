@@ -14,6 +14,7 @@ namespace CRM.Application.Interfaces.Services
         Task<CustomerDto> GetById(int id);
         Task<CustomerDto> AddAsync(CustomerDto entity);
         Task<CustomerDto> Update(CustomerDto entity);
-        Task<List<CustomerDto>> UpdateCustomerDataFromTypeform();
+        Task<List<CustomerDto>> AddCustomerDataFromTypeform();
+        Task<CustomerDto> SendCustomerDataToPipedrive(CustomerDto entity);
     }
 }

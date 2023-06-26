@@ -35,12 +35,12 @@ namespace CRM_API.Controllers
         }
 
         [HttpGet]
-        [Route("update-customer-data-from-typeform")]
-        public async Task<ActionResult<List<CustomerDto>>> UpdateCustomerDataFromTypeform()
+        [Route("add-customer-data-from-typeform")]
+        public async Task<ActionResult<List<CustomerDto>>> AddCustomerDataFromTypeform()
         {
             try
             {
-                var typeformCustomersResponses = await customerService.UpdateCustomerDataFromTypeform();
+                var typeformCustomersResponses = await customerService.AddCustomerDataFromTypeform();
 
                 return typeformCustomersResponses;
             }
@@ -77,6 +77,23 @@ namespace CRM_API.Controllers
                 var createdCustomer = await customerService.AddAsync(customerDto);
 
                 return createdCustomer;
+            }
+            catch (Exception e)
+            {
+
+                return Problem($"Hata !!! {e.Message} {e.StackTrace}");
+            }
+        }
+
+        [HttpPost]
+        [Route("send-customer-data-to-pipedrive")]
+        public async Task<ActionResult<CustomerDto>> SendCustomerDataToPipedrive(CustomerDto customerDto)
+        {
+
+            try
+            {
+                await customerService.SendCustomerDataToPipedrive(customerDto);
+                return Ok();
             }
             catch (Exception e)
             {

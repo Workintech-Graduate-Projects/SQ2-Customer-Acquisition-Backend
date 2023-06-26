@@ -53,6 +53,15 @@ namespace CRM_DataAccess.Migrations
                         .HasColumnType("varchar")
                         .HasColumnName("FirstName");
 
+                    b.Property<int>("IsSentToPipedrive")
+                        .HasColumnType("int")
+                        .HasColumnName("IsSentToPipedrive");
+
+                    b.Property<string>("LandingId")
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar")
+                        .HasColumnName("LandingId");
+
                     b.Property<string>("LastName")
                         .HasMaxLength(100)
                         .HasColumnType("varchar")

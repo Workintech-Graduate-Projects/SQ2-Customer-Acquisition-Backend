@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace CRM.Application.Interfaces.Repositories
 {
-    public interface ICustomerRepository: IGenericRepository<Customer>
+    public interface ICustomerRepository : IGenericRepository<Customer>
     {
-        Task<List<Customer>> UpdateCustomerDataFromTypeform(List<Customer> entity);
+        Task<List<Customer>> AddRangeAsync(List<Customer> entity);
+
+        Task<List<string>> GetAllLandingIds();
     }
 }

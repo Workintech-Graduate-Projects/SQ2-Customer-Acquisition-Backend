@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CRM_DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230624110804_newMig")]
-    partial class newMig
+    [Migration("20230626163830_firstMigration")]
+    partial class firstMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -39,6 +39,9 @@ namespace CRM_DataAccess.Migrations
                         .HasColumnType("int")
                         .HasColumnName("Age");
 
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Email")
                         .HasMaxLength(100)
                         .HasColumnType("varchar")
@@ -52,6 +55,15 @@ namespace CRM_DataAccess.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("varchar")
                         .HasColumnName("FirstName");
+
+                    b.Property<int>("IsSentToPipedrive")
+                        .HasColumnType("int")
+                        .HasColumnName("IsSentToPipedrive");
+
+                    b.Property<string>("LandingId")
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar")
+                        .HasColumnName("LandingId");
 
                     b.Property<string>("LastName")
                         .HasMaxLength(100)
@@ -94,6 +106,9 @@ namespace CRM_DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Name")
                         .HasMaxLength(100)
                         .HasColumnType("varchar")
@@ -117,6 +132,9 @@ namespace CRM_DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Name")
                         .HasMaxLength(100)
                         .HasColumnType("varchar")
@@ -135,6 +153,9 @@ namespace CRM_DataAccess.Migrations
                         .HasColumnName("Id");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Group")
                         .HasMaxLength(100)
@@ -163,6 +184,9 @@ namespace CRM_DataAccess.Migrations
                         .HasColumnName("Id");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("FirstName")
                         .HasMaxLength(100)
