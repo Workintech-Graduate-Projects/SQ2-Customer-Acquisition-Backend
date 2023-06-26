@@ -4,6 +4,7 @@ using CRM.Application.Dtos;
 using CRM.Application.Interfaces.Repositories;
 using CRM.Application.Interfaces.Services;
 using CRM.Domain.Entities;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Schema;
 using System;
@@ -61,6 +62,78 @@ namespace CRM.Application.Services
             return sectorDto;
         }
 
+        public async Task<CustomerDto> SendCustomerDataToPipedrive(CustomerDto entity)
+        {
+            Position position = await positionRepository.GetById(entity.PositionId);
+            Sector sector = await sectorRepository.GetById(entity.SectorId);
+
+            var apiUrl = "https://api.pipedrive.com/v1/leads?api_token=81dbd3b8f7a7c4eb207d2ad52ac10d12f72ebe36";
+
+            JObject body = new JObject();
+
+            body["organization_id"]  = 1;
+            body["owner_id"] = 15178107;
+            body["title"] = "backend-test";
+            body["24afe5b2e1fcc1280f8fe18cc638f559934d7a9d"] = 234.ToString(); //credit score
+            body["b08cc0468b6d44eb79bcf9afd9cc56705a19c518"] = 1.ToString(); //queue value
+            body["b301dff3f2b3c496151e6d69689004d629439a9e"] = "Düşük"; // risk value
+            body["407b288c044cb5b0e4fd1298c38874dbcc6fedd1"] = entity.FirstName;
+            body["98337799a3ea773fc6409b8885a3bf3420ef59ff"] = entity.LastName;
+            body["736730b10f2381ce3719df826e23616f7544ed9d"] = position.Name;
+            body["e56c2b48b88f2e786b212b2ddf33e911a4729aa2"] = sector.Name;
+            body["c56b58fc5fbd0b4142423bc8cede2c72c20eb23d"] = entity.Phone;
+            body["67c531f5476fc3770e471dc4dafbecb6fc412b53"] = entity.Age.ToString();
+            body["8987d4eec0ae130efc458d730c73a1dabe6c82e6"] = entity.University;
+
+            //var jsonPayload = JsonConvert.SerializeObject(body);
+
+            var request = (HttpWebRequest)WebRequest.Create(apiUrl);
+            //request.Headers.Add("Authorization", "API Key 81dbd3b8f7a7c4eb207d2ad52ac10d12f72ebe36");
+            request.Method = "POST";
+            request.ContentType = "application/json";
+
+            using (var streamWriter = new StreamWriter(request.GetRequestStream()))
+            {
+                streamWriter.Write(body);
+                streamWriter.Flush();
+            }
+
+            try
+            {
+                using (var response = (HttpWebResponse)request.GetResponse())
+                {
+                    using (var streamReader = new StreamReader(response.GetResponseStream()))
+                    {
+                        var responseContent = streamReader.ReadToEnd();
+                    }
+                }
+
+                entity.IsSentToPipedrive = true;
+                Customer customer = mapper.Map<CustomerDto, Customer>(entity);
+                await customerRepository.Update(customer);
+                
+            }
+            catch (WebException ex)
+            {
+                var errorResponse = (HttpWebResponse)ex.Response;
+                if (errorResponse != null)
+                {
+                    using (var streamReader = new StreamReader(errorResponse.GetResponseStream()))
+                    {
+                        var errorContent = streamReader.ReadToEnd();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle any other exceptions that occurred during the request
+                Console.WriteLine($"An error occurred: {ex.Message}");
+            }
+
+            return entity;
+            
+        }
+
         public async Task<CustomerDto> Update(CustomerDto entity)
         {
             Customer customer = mapper.Map<CustomerDto, Customer>(entity);
@@ -69,16 +142,17 @@ namespace CRM.Application.Services
             return entity;
         }
 
-        public async Task<List<CustomerDto>> UpdateCustomerDataFromTypeform()
+        public async Task<List<CustomerDto>> AddCustomerDataFromTypeform()
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://api.typeform.com/forms/htBMgwwF/responses");
             request.Headers.Add("Authorization", "Bearer tfp_GBXtzBzbQCR6jehN7QxEEnTcBcSPL6UaxECRmwUcUrVq_3mJrwXQcHAPMcv");
             request.Method = "GET";
 
-            List<Customer> customers = new();
-            List<CustomerDto> customerDtos = new();
+            List<Customer> customersList = new();
+            List<CustomerDto> customerDtosList = new();
             Dictionary<string, int> sectors = await sectorRepository.GetSectorNamesAndIds();
             Dictionary<string, int> positions = await positionRepository.GetPositionNamesAndIds();
+            List<string> dbCustomerLandingIds = await customerRepository.GetAllLandingIds();
 
             using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
             {
@@ -111,18 +185,24 @@ namespace CRM.Application.Services
                         dto.Age = (int)answers[5]["text"];
                         dto.University = (string?)answers[6]["text"];
                         dto.ExperienceYear = (int)answers[7]["number"];
+                        dto.LandingId = (string)item["landing_id"];
+                        dto.IsSentToPipedrive = false;
 
-                        customerDtos.Add(dto);
-                        customers = mapper.Map<List<CustomerDto>, List<Customer>>(customerDtos);
-                        
+                        customerDtosList.Add(dto);
+                        Customer customer = mapper.Map<CustomerDto, Customer>(dto);
+
+                        if (!dbCustomerLandingIds.Contains(customer.LandingId))
+                            customersList.Add(customer);
                     }
-                    await customerRepository.UpdateCustomerDataFromTypeform(customers);
 
-                    return customerDtos;
+                    await customerRepository.AddRangeAsync(customersList);
+
+                    return customerDtosList;
+
                 }
             }
 
-            return await Task.FromResult<List<CustomerDto>>(new List<CustomerDto>());
+            
         }
     }
 }

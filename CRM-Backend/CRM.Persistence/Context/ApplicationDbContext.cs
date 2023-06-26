@@ -1,6 +1,7 @@
 ﻿using CRM.Domain.Entities;
 using CRM_Common;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Microsoft.Identity.Client;
 using System;
 using System.Collections.Generic;
@@ -120,8 +121,17 @@ namespace CRM_Persistence.Context
                     .HasColumnName("University")
                     .HasColumnType("varchar")
                     .HasMaxLength(100);
-                entity.Property(i => i.SectorId).HasColumnName("SectorId");
-                entity.Property(i => i.PositionId).HasColumnName("PositionId");
+                entity.Property(i => i.SectorId)
+                .HasColumnName("SectorId");
+                entity.Property(i => i.PositionId)
+                .HasColumnName("PositionId");
+                entity.Property(i => i.LandingId)
+                .HasColumnName("LandingId")
+                .HasColumnType("varchar")
+                .HasMaxLength(100);
+                entity.Property(i => i.IsSentToPipedrive)
+                .HasColumnName("IsSentToPipedrive")
+                .HasConversion<BoolToZeroOneConverter<int>>();
             });
 
             modelBuilder.Entity<Position>(entity =>

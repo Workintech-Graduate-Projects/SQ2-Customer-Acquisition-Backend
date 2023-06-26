@@ -18,24 +18,17 @@ namespace CRM_DataAccess.Repositories
             _dbContext = dbContext;
         }
 
-        public async Task<List<Customer>> UpdateCustomerDataFromTypeform(List<Customer> entity)
+        public async Task<List<Customer>> AddRangeAsync(List<Customer> entity)
         {
-            var allCustomers = await _dbContext.Customers.ToListAsync();
-            foreach (var item in allCustomers)
-            {
-                foreach (var entityItem in entity)
-                {
-                    if (entityItem!=item)
-                    {
-                        await _dbContext.AddAsync(entityItem);
-                    }
-                }
-               
-            }
-            //await _dbContext.Set<Customer>().AddRangeAsync(entity);
+            await _dbContext.Set<Customer>().AddRangeAsync(entity);
             await _dbContext.SaveChangesAsync();
 
             return await _dbContext.Set<Customer>().ToListAsync();
+        }
+
+        public async Task<List<string>> GetAllLandingIds()
+        {
+            return await _dbContext.Customers.Select(r => (string)r.LandingId).ToListAsync();
         }
     }
 }

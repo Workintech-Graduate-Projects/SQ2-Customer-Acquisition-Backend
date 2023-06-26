@@ -20,5 +20,7 @@ namespace CRM.Domain.Entities
         public Sector? Sector { get; set; }
         public int PositionId { get; set; }
         public Position? Position { get; set; }
+        public string? LandingId { get; set; }
+        public bool IsSentToPipedrive { get; set; }
     }
 }
