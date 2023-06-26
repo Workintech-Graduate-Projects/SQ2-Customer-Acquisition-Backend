@@ -13,3 +13,5 @@ C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisitio
 C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.Application\obj\Debug\net6.0\refint\CRM.Application.dll
 C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.Application\obj\Debug\net6.0\CRM.Application.pdb
 C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.Application\obj\Debug\net6.0\ref\CRM.Application.dll
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.Application\bin\Debug\net6.0\CRM.Common.dll
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.Application\bin\Debug\net6.0\CRM.Common.pdb
