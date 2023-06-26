@@ -11,7 +11,7 @@ namespace CRM.Domain.Entities
     {
         public string? Name { get; set; }
         public string? Group { get; set; }
-        public int? Score { get; set; }
+        public int Score { get; set; }
         public ICollection<Customer>? Customers { get; set; }
     }
 }

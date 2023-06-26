@@ -4,6 +4,7 @@ using CRM.Application.Dtos;
 using CRM.Application.Interfaces.Repositories;
 using CRM.Application.Interfaces.Services;
 using CRM.Domain.Entities;
+using CRM_Common;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Schema;
@@ -70,13 +71,14 @@ namespace CRM.Application.Services
             var apiUrl = "https://api.pipedrive.com/v1/leads?api_token=81dbd3b8f7a7c4eb207d2ad52ac10d12f72ebe36";
 
             JObject body = new JObject();
+            ScoreCalculator sc = new();
 
             body["organization_id"]  = 1;
             body["owner_id"] = 15178107;
             body["title"] = "backend-test";
-            body["24afe5b2e1fcc1280f8fe18cc638f559934d7a9d"] = 234.ToString(); //credit score
-            body["b08cc0468b6d44eb79bcf9afd9cc56705a19c518"] = 1.ToString(); //queue value
-            body["b301dff3f2b3c496151e6d69689004d629439a9e"] = "Düşük"; // risk value
+            body["24afe5b2e1fcc1280f8fe18cc638f559934d7a9d"] = sc.Calculate(position.Score, 10, sector.Score).ToString(); //credit score
+            body["b08cc0468b6d44eb79bcf9afd9cc56705a19c518"] = sc.QueueValue.ToString(); //queue value
+            body["b301dff3f2b3c496151e6d69689004d629439a9e"] = sc.RiskValue; // risk value
             body["407b288c044cb5b0e4fd1298c38874dbcc6fedd1"] = entity.FirstName;
             body["98337799a3ea773fc6409b8885a3bf3420ef59ff"] = entity.LastName;
             body["736730b10f2381ce3719df826e23616f7544ed9d"] = position.Name;

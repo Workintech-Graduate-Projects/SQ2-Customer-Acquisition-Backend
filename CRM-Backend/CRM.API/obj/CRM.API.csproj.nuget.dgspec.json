@@ -115,6 +115,9 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "C:\\Users\\rumey\\source\\repos\\Workintech-Graduate-Projects\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM.Common\\CRM.Common.csproj": {
+                "projectPath": "C:\\Users\\rumey\\source\\repos\\Workintech-Graduate-Projects\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM.Common\\CRM.Common.csproj"
+              },
               "C:\\Users\\rumey\\source\\repos\\Workintech-Graduate-Projects\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM.Domain\\CRM.Domain.csproj": {
                 "projectPath": "C:\\Users\\rumey\\source\\repos\\Workintech-Graduate-Projects\\SQ2-Customer-Acquisition-Backend\\CRM-Backend\\CRM.Domain\\CRM.Domain.csproj"
               }
