@@ -168,7 +168,6 @@ C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisitio
 C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.API\bin\Debug\net6.0\CRM.Application.dll
 C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.API\bin\Debug\net6.0\CRM.Application.pdb
 C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.API\bin\Debug\net6.0\AutoMapper.dll
-C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.API\obj\Debug\net6.0\CRM.API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.API\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.API\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
@@ -177,3 +176,4 @@ C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisitio
 C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.API\bin\Debug\net6.0\Scrutor.dll
 C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.API\bin\Debug\net6.0\Swashbuckle.AspNetCore.Annotations.dll
 C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.API\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.dll
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.API\obj\Debug\net6.0\CRM.API.MvcApplicationPartsAssemblyInfo.cs

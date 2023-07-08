@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CRM_DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230708090850_firstMig")]
-    partial class firstMig
+    [Migration("20230708133113_passwordHashChar")]
+    partial class passwordHashChar
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -199,7 +199,7 @@ namespace CRM_DataAccess.Migrations
                         .HasColumnName("LastName");
 
                     b.Property<string>("PasswordHash")
-                        .HasMaxLength(50)
+                        .HasMaxLength(100)
                         .HasColumnType("varchar")
                         .HasColumnName("PasswordHash");
 

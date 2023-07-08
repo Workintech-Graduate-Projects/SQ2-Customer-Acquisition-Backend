@@ -1,5 +1,9 @@
-﻿using CRM.Application.Dtos;
+﻿using AutoMapper;
+using CRM.Application.Dtos;
+using CRM.Application.Interfaces.Repositories;
 using CRM.Application.Interfaces.Services;
+using CRM.Domain.Entities;
+using CRM_Common.Helpers;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -15,59 +19,34 @@ namespace CRM.Application.Services
 {
     public class UserService : IUserService
     {
-        //private readonly IHttpContextAccessor _httpContextAccessor;
-        private readonly IConfiguration _configuration;
-
-        public UserService(IConfiguration configuration) //IHttpContextAccessor httpContextAccessor)
+        private readonly IUserRepository userRepository;
+        private readonly IMapper mapper;
+        public UserService(IUserRepository userRepository, IMapper mapper)
         {
-            _configuration = configuration;
-            //_httpContextAccessor = httpContextAccessor;
-        }
-        public string CreatePasswordHash(string password)
-        {
-            return ComputeStringToSha256Hash(password);
+            this.userRepository = userRepository;
+            this.mapper = mapper;
         }
 
-        static string ComputeStringToSha256Hash(string plainText)
+        public async Task<UserDto> AddAsync(UserDto entity)
         {
-            // Create a SHA256 hash from string   
-            using (SHA256 sha256Hash = SHA256.Create())
-            {
-                // Computing Hash - returns here byte array
-                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(plainText));
 
-                // now convert byte array to a string   
-                StringBuilder stringbuilder = new StringBuilder();
-                for (int i = 0; i < bytes.Length; i++)
-                {
-                    stringbuilder.Append(bytes[i].ToString("x2"));
-                }
-                return stringbuilder.ToString();
-            }
+            var passwordHashed = PasswordHashHelper.CreatePasswordHash(entity.Password);
+
+            User user = mapper.Map<UserDto, User>(entity);
+            user.PasswordHash = passwordHashed;
+            await userRepository.AddAsync(user);
+
+            return entity;
         }
 
-        public string CreateToken(UserDto user)
+        public async Task<UserDto> Update(UserDto entity)
         {
-            List<Claim> claims = new List<Claim>
-            {
-                new Claim(ClaimTypes.Name, user.Username),
-                new Claim(ClaimTypes.Role, "Admin")
-            };
+            User user = mapper.Map<UserDto, User>(entity);
+            await userRepository.Update(user);
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(
-                _configuration.GetSection("AppSettings:Token").Value));
-
-            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
-
-            var token = new JwtSecurityToken(
-                claims: claims,
-                expires: DateTime.Now.AddDays(1),
-                signingCredentials: creds);
-
-            var jwt = new JwtSecurityTokenHandler().WriteToken(token);
-
-            return jwt;
+            return entity;
         }
+ 
     }
 }
 

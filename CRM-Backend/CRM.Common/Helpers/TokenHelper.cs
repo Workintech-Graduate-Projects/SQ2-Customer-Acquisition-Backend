@@ -12,12 +12,12 @@ namespace CRM_Common.Helpers
 {
     public class TokenHelper
     {
-        public static string CreateToken(string userName, string role)
+        public static string CreateToken(string userName, int role)
         {
             List<Claim> claims = new List<Claim>
             {
                 new Claim(ClaimTypes.Name, userName),
-                new Claim(ClaimTypes.Role, role)
+                new Claim(ClaimTypes.Role, role.ToString())
             };
 
             JwtSecurityToken token = new(
