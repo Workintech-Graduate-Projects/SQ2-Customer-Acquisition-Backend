@@ -41,3 +41,6 @@
 /CRM-Backend/.vs/CRM-Backend/xs/project-cache
 /CRM-Backend/.vs/CRM-Backend/xs
 /CRM-Backend/.vs/CRM-Backend/v17/.wsuo
+/CRM-Backend/CRM.API/obj/Debug/net6.0/CRM.API.csproj.AssemblyReference.cache
+/CRM-Backend/CRM.Application/obj/Debug/net6.0/CRM.Application.csproj.AssemblyReference.cache
+/CRM-Backend/CRM.Persistence/obj/Debug/net6.0/CRM.Persistence.csproj.AssemblyReference.cache
