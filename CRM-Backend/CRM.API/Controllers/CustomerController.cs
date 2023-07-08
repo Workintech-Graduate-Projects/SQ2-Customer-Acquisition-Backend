@@ -1,6 +1,9 @@
 ﻿using CRM.Application.Dtos;
 using CRM.Application.Interfaces.Services;
 using CRM.Application.Services;
+using CRM_Common.Attributes;
+using CRM_Common.Enums;
+using CRM_Common.Helpers;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,11 +21,17 @@ namespace CRM_API.Controllers
         }
 
         [HttpGet]
+        [Authorization(new[] { AuthorizationRole.Admin, AuthorizationRole.Employee })]
         //[Route("get-all-customers")]
-        public async Task<ActionResult<List<CustomerDto>>> GetAllCustomers()
+        public async Task<ActionResult<List<CustomerDto>>> GetAllCustomers(string token)
         {
             try
             {
+                string role = TokenHelper.GetUserRoleFromJwtToken(token);
+
+                if (string.IsNullOrWhiteSpace(role) || !AuthorizationHelper.HasAuthority(role, this.GetType(), "GetAllCustomers"))
+                    throw new Exception("User Don't have Authority to use this API");
+
                 var allCustomers = await customerService.GetAll();
 
                 return allCustomers;
@@ -40,6 +49,7 @@ namespace CRM_API.Controllers
         {
             try
             {
+
                 var typeformCustomersResponses = await customerService.AddCustomerDataFromTypeform();
 
                 return typeformCustomersResponses;
@@ -108,7 +118,7 @@ namespace CRM_API.Controllers
         {
             try
             {
-               var updatedCustomer = await customerService.Update(customerDto);
+                var updatedCustomer = await customerService.Update(customerDto);
 
                 return updatedCustomer;
             }

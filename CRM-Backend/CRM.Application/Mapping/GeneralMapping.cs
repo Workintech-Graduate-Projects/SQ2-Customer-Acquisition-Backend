@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CRM.Application.Mapping
 {
-    public class GeneralMapping:Profile
+    public class GeneralMapping : Profile
     {
         public GeneralMapping()
         {
@@ -18,6 +18,8 @@ namespace CRM.Application.Mapping
             CreateMap<Customer, CustomerDto>().ReverseMap();
 
             CreateMap<Sector, SectorDto>().ReverseMap();
+
+            CreateMap<User, UserDto>().ReverseMap();
         }
     }
 }
