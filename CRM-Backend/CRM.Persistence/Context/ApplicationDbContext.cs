@@ -76,7 +76,7 @@ namespace CRM_Persistence.Context
                 entity.Property(i => i.PasswordHash)
                     .HasColumnName("PasswordHash")
                     .HasColumnType("varchar")
-                    .HasMaxLength(50);
+                    .HasMaxLength(100);
                 entity.Property(i => i.FirstName)
                     .HasColumnName("FirstName")
                     .HasColumnType("varchar")

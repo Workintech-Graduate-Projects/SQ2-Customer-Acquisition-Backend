@@ -11,18 +11,20 @@ namespace CRM_API.Controllers
     public class AuthController : ControllerBase
     {
         private readonly IUserService userService;
-        
-        public AuthController( IUserService userService)
+        private readonly ILoginService loginService;
+
+        public AuthController(ILoginService loginService, IUserService userService)
         {
+            this.loginService = loginService;
             this.userService = userService;
         }
         [HttpPost("register")]
         public async Task<ActionResult<UserDto>> Register(UserDto request)
         {
-            
+
             try
             {
-                userService.CreatePasswordHash(request.Password);
+                await userService.AddAsync(request);
 
                 return Ok();
             }
@@ -38,7 +40,9 @@ namespace CRM_API.Controllers
         {
             try
             {
-                string token = userService.CreateToken(request);
+                
+                var token = await loginService.Login(request);
+
                 return Ok(token);
             }
             catch (Exception e)

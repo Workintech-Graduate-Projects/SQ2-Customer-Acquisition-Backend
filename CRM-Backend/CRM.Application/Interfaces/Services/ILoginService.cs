@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace CRM.Application.Interfaces.Services
 {
-    public interface IUserService
+    public interface ILoginService
     {
-        Task<UserDto> AddAsync(UserDto entity);
-        Task<UserDto> Update(UserDto entity);
+        public Task<string> Login(UserDto user);
     }
 }
