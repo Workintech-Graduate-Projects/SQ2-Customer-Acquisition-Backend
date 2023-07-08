@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace CRM_DataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class firstMigration : Migration
+    public partial class firstMig : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -54,7 +54,7 @@ namespace CRM_DataAccess.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: true),
                     Group = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: true),
-                    Score = table.Column<int>(type: "int", nullable: true),
+                    Score = table.Column<int>(type: "int", nullable: false),
                     CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
@@ -70,14 +70,22 @@ namespace CRM_DataAccess.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Username = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: true),
-                    Password = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: true),
+                    PasswordHash = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: true),
                     FirstName = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: true),
                     LastName = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: true),
+                    RoleId = table.Column<int>(type: "int", nullable: false),
                     CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_User", x => x.Id);
+                    table.ForeignKey(
+                        name: "role_user_id_fk",
+                        column: x => x.RoleId,
+                        principalSchema: "dbo",
+                        principalTable: "Role",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -130,6 +138,12 @@ namespace CRM_DataAccess.Migrations
                 schema: "dbo",
                 table: "Customer",
                 column: "SectorId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_User_RoleId",
+                schema: "dbo",
+                table: "User",
+                column: "RoleId");
         }
 
         /// <inheritdoc />
@@ -137,10 +151,6 @@ namespace CRM_DataAccess.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Customer",
-                schema: "dbo");
-
-            migrationBuilder.DropTable(
-                name: "Role",
                 schema: "dbo");
 
             migrationBuilder.DropTable(
@@ -153,6 +163,10 @@ namespace CRM_DataAccess.Migrations
 
             migrationBuilder.DropTable(
                 name: "Sector",
+                schema: "dbo");
+
+            migrationBuilder.DropTable(
+                name: "Role",
                 schema: "dbo");
         }
     }
