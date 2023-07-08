@@ -56,6 +56,7 @@ namespace CRM_Persistence.Context
                     .HasColumnName("Name")
                     .HasColumnType("varchar")
                     .HasMaxLength(100);
+                entity.HasMany(i => i.Users).WithOne(i => i.Role).HasForeignKey(i => i.RoleId).HasConstraintName("role_user_id_fk");
             });
            
 
@@ -74,11 +75,7 @@ namespace CRM_Persistence.Context
                     .HasMaxLength(100);
                 entity.Property(i => i.PasswordHash)
                     .HasColumnName("PasswordHash")
-                    .HasColumnType("byte")
-                    .HasMaxLength(50);
-                entity.Property(i => i.PasswordSalt)
-                    .HasColumnName("PasswordSalt")
-                    .HasColumnType("byte")
+                    .HasColumnType("varchar")
                     .HasMaxLength(50);
                 entity.Property(i => i.FirstName)
                     .HasColumnName("FirstName")
@@ -88,6 +85,8 @@ namespace CRM_Persistence.Context
                     .HasColumnName("LastName")
                     .HasColumnType("varchar")
                     .HasMaxLength(100);
+                entity.Property(i => i.RoleId)
+                .HasColumnName("RoleId");
             });
 
             modelBuilder.Entity<Customer>(entity =>

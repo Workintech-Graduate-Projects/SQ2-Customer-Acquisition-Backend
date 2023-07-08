@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CRM_DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230705205220_PasswordSaltHash")]
-    partial class PasswordSaltHash
+    [Migration("20230708090850_firstMig")]
+    partial class firstMig
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -198,10 +198,14 @@ namespace CRM_DataAccess.Migrations
                         .HasColumnType("varchar")
                         .HasColumnName("LastName");
 
-                    b.Property<string>("Password")
+                    b.Property<string>("PasswordHash")
                         .HasMaxLength(50)
                         .HasColumnType("varchar")
-                        .HasColumnName("Password");
+                        .HasColumnName("PasswordHash");
+
+                    b.Property<int>("RoleId")
+                        .HasColumnType("int")
+                        .HasColumnName("RoleId");
 
                     b.Property<string>("Username")
                         .HasMaxLength(100)
@@ -209,6 +213,8 @@ namespace CRM_DataAccess.Migrations
                         .HasColumnName("Username");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
 
                     b.ToTable("User", "dbo");
                 });
@@ -234,9 +240,26 @@ namespace CRM_DataAccess.Migrations
                     b.Navigation("Sector");
                 });
 
+            modelBuilder.Entity("CRM.Domain.Entities.User", b =>
+                {
+                    b.HasOne("CRM.Domain.Entities.Role", "Role")
+                        .WithMany("Users")
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("role_user_id_fk");
+
+                    b.Navigation("Role");
+                });
+
             modelBuilder.Entity("CRM.Domain.Entities.Position", b =>
                 {
                     b.Navigation("Customers");
+                });
+
+            modelBuilder.Entity("CRM.Domain.Entities.Role", b =>
+                {
+                    b.Navigation("Users");
                 });
 
             modelBuilder.Entity("CRM.Domain.Entities.Sector", b =>
