@@ -134,7 +134,8 @@ namespace CRM_Persistence.Context
                 .HasMaxLength(100);
                 entity.Property(i => i.IsSentToPipedrive)
                 .HasColumnName("IsSentToPipedrive")
-                .HasConversion<BoolToZeroOneConverter<int>>();
+                .HasConversion<BoolToZeroOneConverter<int>>()
+                .HasDefaultValue(false);
             });
 
             modelBuilder.Entity<Position>(entity =>
