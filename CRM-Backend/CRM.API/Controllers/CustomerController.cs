@@ -69,17 +69,10 @@ namespace CRM_API.Controllers
         }
 
         [HttpGet("{id}")]
-        [Authorization(new[] { AuthorizationRole.Admin, AuthorizationRole.Employee })]
-        //[Route("get-customer-by-id")]
-        public async Task<ActionResult<CustomerDto>> GetCustomerById(int id, string token)
+        public async Task<ActionResult<CustomerDto>> GetCustomerById(int id)
         {
             try
             {
-                string role = TokenHelper.GetUserRoleFromJwtToken(token);
-
-                if (string.IsNullOrWhiteSpace(role) || !AuthorizationHelper.HasAuthority(role, this.GetType(), "GetCustomerById"))
-                    throw new Exception("User Don't have Authority to use this API");
-
                 var customer = await customerService.GetById(id);
                 return customer;
             }
@@ -91,18 +84,13 @@ namespace CRM_API.Controllers
         }
 
         [HttpPost]
-        [Authorization(new[] { AuthorizationRole.Admin, AuthorizationRole.Employee })]
-        //[Route("create-customer")]
-        public async Task<ActionResult<CustomerDto>> Add(CustomerDto customerDto, string token)
+        
+        public async Task<ActionResult<CustomerDto>> Add(CustomerDto customerDto)
         {
 
             try
             {
-                string role = TokenHelper.GetUserRoleFromJwtToken(token);
-
-                if (string.IsNullOrWhiteSpace(role) || !AuthorizationHelper.HasAuthority(role, this.GetType(), "Add"))
-                    throw new Exception("User Don't have Authority to use this API");
-
+               
                 var createdCustomer = await customerService.AddAsync(customerDto);
 
                 return createdCustomer;
@@ -122,7 +110,6 @@ namespace CRM_API.Controllers
 
             try
             {
-
                 string role = TokenHelper.GetUserRoleFromJwtToken(token);
 
                 if (string.IsNullOrWhiteSpace(role) || !AuthorizationHelper.HasAuthority(role, this.GetType(), "SendCustomerDataToPipedrive"))
