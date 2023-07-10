@@ -4,8 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using CRM.Application.Dtos;
 using CRM.Application.Interfaces.Services;
+using CRM_Common.Attributes;
+using CRM_Common.Enums;
+using CRM_Common.Helpers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json.Linq;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -21,13 +25,14 @@ namespace CRM_API.Controllers
         {
             this.positionService = positionService;
         }
-        
-        
+
+
         [HttpGet]
         public async Task<ActionResult<List<PositionDto>>> GetAllPositions()
         {
             try
             {
+
                 var positions = await positionService.GetAll();
                 return positions;
             }
@@ -37,7 +42,7 @@ namespace CRM_API.Controllers
                 return Problem($"Hata Var!!!! {e.Message} {e.StackTrace}");
             }
         }
-        
+
         [HttpGet("{id}")]
         public async Task<ActionResult<PositionDto>> GetPositionById(int id)
         {
@@ -52,12 +57,14 @@ namespace CRM_API.Controllers
                 return Problem($"Hata Var!!!! {e.Message} {e.StackTrace}");
             }
         }
-        
+
         [HttpPost]
         public async Task<ActionResult<PositionDto>> Add(PositionDto positionDto)
         {
+
             try
             {
+
                 var createdPosition = await positionService.AddAsync(positionDto);
                 return createdPosition;
             }
@@ -65,6 +72,7 @@ namespace CRM_API.Controllers
             {
                 return Problem($"Hata Var!!!! {e.Message} {e.StackTrace}");
             }
+
 
         }
 

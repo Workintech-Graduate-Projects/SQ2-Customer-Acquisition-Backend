@@ -75,8 +75,8 @@ namespace CRM.Application.Services
 
             body["organization_id"]  = 1;
             body["owner_id"] = 15178107;
-            body["title"] = "backend-test";
-            body["24afe5b2e1fcc1280f8fe18cc638f559934d7a9d"] = sc.Calculate(position.Score, 10, sector.Score).ToString(); //credit score
+            body["title"] = entity.FirstName + " "+ entity.LastName+" "+ " Lead";
+            body["24afe5b2e1fcc1280f8fe18cc638f559934d7a9d"] = sc.Calculate(position.Score, entity.ExperienceYear, sector.Score).ToString(); //credit score
             body["b08cc0468b6d44eb79bcf9afd9cc56705a19c518"] = sc.QueueValue.ToString(); //queue value
             body["b301dff3f2b3c496151e6d69689004d629439a9e"] = sc.RiskValue; // risk value
             body["407b288c044cb5b0e4fd1298c38874dbcc6fedd1"] = entity.FirstName;
@@ -147,7 +147,7 @@ namespace CRM.Application.Services
         public async Task<List<CustomerDto>> AddCustomerDataFromTypeform()
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://api.typeform.com/forms/htBMgwwF/responses");
-            request.Headers.Add("Authorization", "Bearer tfp_GBXtzBzbQCR6jehN7QxEEnTcBcSPL6UaxECRmwUcUrVq_3mJrwXQcHAPMcv");
+            request.Headers.Add("Authorization", "Bearer tfp_9QxnF7i73GWu7vSUgjFNCQZT9TzXfkXZWbz68QyvmT5v_3mPGXEDH4arVat");
             request.Method = "GET";
 
             List<Customer> customersList = new();
