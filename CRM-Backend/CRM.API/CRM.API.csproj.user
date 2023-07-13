@@ -3,5 +3,10 @@
   <PropertyGroup>
     <Controller_SelectedScaffolderID>ApiControllerEmptyScaffolder</Controller_SelectedScaffolderID>
     <Controller_SelectedScaffolderCategoryPath>root/Common/Api</Controller_SelectedScaffolderCategoryPath>
+    <ActiveDebugProfile>CRM_API</ActiveDebugProfile>
+    <NameOfLastUsedPublishProfile>C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.API\Properties\PublishProfiles\CRMAPI20230713140033 - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
   </PropertyGroup>
 </Project>

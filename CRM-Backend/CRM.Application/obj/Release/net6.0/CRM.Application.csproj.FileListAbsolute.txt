@@ -1,0 +1,17 @@
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.Application\bin\Release\net6.0\CRM.Application.deps.json
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.Application\bin\Release\net6.0\CRM.Application.dll
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.Application\bin\Release\net6.0\CRM.Application.pdb
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.Application\bin\Release\net6.0\CRM.Common.dll
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.Application\bin\Release\net6.0\CRM.Domain.dll
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.Application\bin\Release\net6.0\CRM.Common.pdb
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.Application\bin\Release\net6.0\CRM.Domain.pdb
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.Application\obj\Release\net6.0\CRM.Application.csproj.AssemblyReference.cache
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.Application\obj\Release\net6.0\CRM.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.Application\obj\Release\net6.0\CRM.Application.AssemblyInfoInputs.cache
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.Application\obj\Release\net6.0\CRM.Application.AssemblyInfo.cs
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.Application\obj\Release\net6.0\CRM.Application.csproj.CoreCompileInputs.cache
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.Application\obj\Release\net6.0\CRM.Application.csproj.CopyComplete
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.Application\obj\Release\net6.0\CRM.Application.dll
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.Application\obj\Release\net6.0\refint\CRM.Application.dll
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.Application\obj\Release\net6.0\CRM.Application.pdb
+C:\Users\rumey\source\repos\Workintech-Graduate-Projects\SQ2-Customer-Acquisition-Backend\CRM-Backend\CRM.Application\obj\Release\net6.0\ref\CRM.Application.dll
