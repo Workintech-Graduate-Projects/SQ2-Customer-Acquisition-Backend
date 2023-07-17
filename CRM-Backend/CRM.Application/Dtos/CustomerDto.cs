@@ -18,7 +18,11 @@ namespace CRM.Application.Dtos
         public int Age { get; set; }
         public string? University { get; set; }
         public int SectorId { get; set; }
+        public string SectorName { get; set; }
+        public int SectorScore { get; set; }
         public int PositionId { get; set; }
+        public string PositionName { get; set; }
+        public int PositionScore { get; set; }
         public string? LandingId { get; set; }
         public bool IsSentToPipedrive { get; set; }
     }
