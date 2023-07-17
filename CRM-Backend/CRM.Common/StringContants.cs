@@ -8,6 +8,6 @@ namespace CRM_Common
 {
     public class StringContants
     {
-        public static string DbConnectionString { get; } = "Server=tcp:crm-api-server.database.windows.net,1433;Initial Catalog=CRM-DB;Persist Security Info=False;User ID=Admincrm;Password=Adminpass0;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+        public static string DbConnectionString { get; } = "Data Source=DESKTOP-TGHGBD6;Initial Catalog=CRM-DB;Integrated Security=True;TrustServerCertificate=True";
     }
 }

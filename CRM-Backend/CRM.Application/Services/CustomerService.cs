@@ -152,6 +152,7 @@ namespace CRM.Application.Services
 
             List<Customer> customersList = new();
             List<CustomerDto> customerDtosList = new();
+            
             Dictionary<string, int> sectors = await sectorRepository.GetSectorNamesAndIds();
             Dictionary<string, int> positions = await positionRepository.GetPositionNamesAndIds();
             List<string> dbCustomerLandingIds = await customerRepository.GetAllLandingIds();
@@ -189,9 +190,16 @@ namespace CRM.Application.Services
                         dto.ExperienceYear = (int)answers[7]["number"];
                         dto.LandingId = (string)item["landing_id"];
                         dto.IsSentToPipedrive = false;
+                        Sector sector = await sectorRepository.GetById(dto.SectorId);
+                        dto.SectorName = sector.Name;
+                        dto.SectorScore = sector.Score;
+                        Position position = await positionRepository.GetById(dto.PositionId);
+                        dto.PositionName = position.Name;
+                        dto.PositionScore = position.Score;
 
                         customerDtosList.Add(dto);
                         Customer customer = mapper.Map<CustomerDto, Customer>(dto);
+
 
                         if (!dbCustomerLandingIds.Contains(customer.LandingId))
                             customersList.Add(customer);
